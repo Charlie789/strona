@@ -1,15 +1,12 @@
 <?php
 include 'pass.php';
-$link = mysqli_connect("127.0.0.1", "31549668_test", $pass, 
+$mysqli = new mysqli("127.0.0.1", "31549668_test", $pass, 
 "31549668_test");
 
-if (!$link) {
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
-}
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+} 
 
 echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
-echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
+echo "Host information: " . mysqli_get_host_info($mysqli) . PHP_EOL;
 ?>

@@ -1,0 +1,14 @@
+Index index.php
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI}
+
+<Files ~ "pass.php">  
+Order Allow,Deny
+Deny from All
+</Files>
+
+<Files ~ "db_connect.php">  
+Order Allow,Deny
+Deny from All
+</Files>
