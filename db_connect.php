@@ -1,6 +1,7 @@
 <?php
-$pass = include 'pass.php';
-$link = mysqli_connect("127.0.0.1", "31549668_test", $pass, "31549668_test");
+include 'pass.php';
+$link = mysqli_connect("127.0.0.1", "31549668_test", $pass, 
+"31549668_test");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
