@@ -18,7 +18,7 @@
 				printf("<br />Select returned %d rows.<br />", $result->num_rows);
 			while($row = $result->fetch_assoc()) {
 					$idt = $row["ID"];
-					$nazwa = $row["Name"];
+					$nazwa = $row["Nazwa"];
 					$fp = @fsockopen($nazwa, 80);
 					if ($fp) { $status = 'OK'; } else { $status = 'słabo'; }
 					print "<TR><TD>$idt</TD><TD>$nazwa</TD><TD>$status</TD></TR>\n";
