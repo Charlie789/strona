@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Appel Karol</title>
+    <title>Appel</title>
     <link href="mainstyle.css" rel="stylesheet" type="text/css" />
 </head>
 
