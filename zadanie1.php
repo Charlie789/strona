@@ -11,17 +11,18 @@
 	<div class="content">
 		Zadanie 1
 		<?php include 'db_connect.php';
-			$result = $mysqli->query("SELECT * FROM LiveTest") or die ("Błąd zapytania do bazy: $dbname");
+			/*$result = $mysqli->query("SELECT * FROM 
+'LiveTest'") or die ("Błąd zapytania do bazy: $dbname");*/
 			print "<TABLE CELLPADDING=5 BORDER=1>";
 			print "<TR><TD>idt</TD><TD>Nazwa</TD><TD>Status</TD></TR>\n";
 			if ($result = $mysqli->query("SELECT * FROM LiveTest")) {
 				printf("<br />Select returned %d rows.<br />", $result->num_rows);
 			while($row = $result->fetch_assoc()) {
 					$idt = $row["ID"];
-					$nazwa = $row["Name"];
-					$fp = @fsockopen($nazwa, 80);
+					$naz = $row["Nazwa"];
+					$fp = @fsockopen($naz, 80);
 					if ($fp) { $status = 'OK'; } else { $status = 'słabo'; }
-					print "<TR><TD>$idt</TD><TD>$nazwa</TD><TD>$status</TD></TR>\n";
+					print "<TR><TD>$idt</TD><TD>$naz</TD><TD>$status</TD></TR>\n";
 				}
 			}
 			print "</TABLE>";
