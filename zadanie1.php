@@ -11,7 +11,7 @@
 	<div class="content">
 		Zadanie 1
 		<?php include 'db_connect.php';
-			$result = $mysqli->query($polaczenie, "SELECT * FROM LiveTest") or die ("Błąd zapytania do bazy: $dbname");
+			$result = $mysqli->query("SELECT * FROM LiveTest") or die ("Błąd zapytania do bazy: $dbname");
 			print "<TABLE CELLPADDING=5 BORDER=1>";
 			print "<TR><TD>idt</TD><TD>Nazwa</TD><TD>Status</TD></TR>\n";
 			if ($result = $mysqli->query("SELECT * FROM test_table")) {
@@ -24,7 +24,7 @@
 					print "<TR><TD>$idt</TD><TD>$nazwa</TD><TD>$status</TD></TR>\n";
 				}
 			}
-			printf "</TABLE>";
+			print "</TABLE>";
 			$result->close();
 		?>
 	</div>
