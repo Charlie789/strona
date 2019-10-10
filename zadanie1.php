@@ -14,7 +14,7 @@
 			$result = $mysqli->query("SELECT * FROM LiveTest") or die ("Błąd zapytania do bazy: $dbname");
 			print "<TABLE CELLPADDING=5 BORDER=1>";
 			print "<TR><TD>idt</TD><TD>Nazwa</TD><TD>Status</TD></TR>\n";
-			if ($result = $mysqli->query("SELECT * FROM test_table")) {
+			if ($result = $mysqli->query("SELECT * FROM LiveTest")) {
 				printf("<br />Select returned %d rows.<br />", $result->num_rows);
 			while($row = $result->fetch_assoc()) {
 					$idt = $row["ID"];
