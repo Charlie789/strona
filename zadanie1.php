@@ -14,15 +14,18 @@
 			$result = $mysqli->query($polaczenie, "SELECT * FROM LiveTest") or die ("Błąd zapytania do bazy: $dbname");
 			print "<TABLE CELLPADDING=5 BORDER=1>";
 			print "<TR><TD>idt</TD><TD>Nazwa</TD><TD>Status</TD></TR>\n";
-			while ($wiersz = mysqli_fetch_array ($result)) {
-			$idt = $wiersz[0];
-			$nazwa = $wiersz[1];
-			$fp = @fsockopen($nazwa, 80);
-			if ($fp) { $status = 'OK'; } else { $status = 'słabo'; }
-			print "<TR><TD>$idt</TD><TD>$nazwa</TD><TD>$status</TD></TR>\n";
+			if ($result = $mysqli->query("SELECT * FROM test_table")) {
+				printf("<br />Select returned %d rows.<br />", $result->num_rows);
+			while($row = $result->fetch_assoc()) {
+					$idt = $row["ID"];
+					$nazwa = $row["Name"];
+					$fp = @fsockopen($nazwa, 80);
+					if ($fp) { $status = 'OK'; } else { $status = 'słabo'; }
+					print "<TR><TD>$idt</TD><TD>$nazwa</TD><TD>$status</TD></TR>\n";
+				}
 			}
-			print "</TABLE>";
-			mysqli_close($polaczenie);
+			printf "</TABLE>";
+			$result->close();
 		?>
 	</div>
 </body>
