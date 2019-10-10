@@ -10,6 +10,20 @@
 
 	<div class="content">
 		Zadanie 1
+		<?php include 'db_connect.php';
+			$rezultat = mysqli_query($polaczenie, "SELECT * FROM LiveTest") or die ("Błąd zapytania do bazy: $dbname");
+			print "<TABLE CELLPADDING=5 BORDER=1>";
+			print "<TR><TD>idt</TD><TD>Nazwa</TD><TD>Status</TD></TR>\n";
+			while ($wiersz = mysqli_fetch_array ($rezultat)) {
+			$idt = $wiersz[0];
+			$nazwa = $wiersz[1];
+			$fp = @fsockopen($nazwa, 80);
+			if ($fp) { $status = 'OK'; } else { $status = 'słabo'; }
+			print "<TR><TD>$idt</TD><TD>$nazwa</TD><TD>$status</TD></TR>\n";
+			}
+			print "</TABLE>";
+			mysqli_close($polaczenie);
+		?>
 	</div>
 </body>
 </html>
