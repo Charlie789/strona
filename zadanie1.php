@@ -14,7 +14,7 @@
 		<?php include 'db_connect.php';
 			/*$result = $mysqli->query("SELECT * FROM 'LiveTest'") or die ("Błąd zapytania do bazy: $dbname");*/
 			print "<TABLE CELLPADDING=5 BORDER=1>";
-			print "<TR><TD>idt</TD><TD>Nazwa</TD><TD>Status</TD><TD>Downtime</TD></TR>\n";
+			print "<TR><TD>ID</TD><TD>Nazwa</TD><TD>Status</TD><TD>Downtime</TD></TR>\n";
 			if ($result = $mysqli->query("SELECT * FROM LiveTest")) {
 				printf("<br />Select returned %d rows.<br />", $result->num_rows);
 				while($row = $result->fetch_assoc()) {
@@ -22,9 +22,12 @@
 					$naz = $row["Nazwa"];
 					$tim = $row["DownTime"];
 					$fp = @fsockopen($naz, 80);
-					if ($fp) { $status = 'OK'; } else { $status = 'słabo';
-						$tim = strtotime('+ 10 seconds',$tim);
-					/*$mysqli->query('SELECT TIMESTAMPADD(SECOND, 10 ,$tim)');*/ }
+					if ($fp) { 
+						$status = 'OK'; 	
+					} else { 
+						$status = 'słabo';
+						$mysqli->query("UPDATE `LiveTest` SET `DownTime`=`DownTime` + INTERVAL 10 SECOND WHERE `ID`=$idt");
+					}
 					print "<TR><TD>$idt</TD><TD>$naz</TD><TD>$status</TD><TD>$tim</TD></TR>\n";
 				}
 			}
