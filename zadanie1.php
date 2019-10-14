@@ -12,11 +12,9 @@
 	<div class="content">
 		Zadanie 1
 		<?php include 'db_connect.php';
-			/*$result = $mysqli->query("SELECT * FROM 'LiveTest'") or die ("Błąd zapytania do bazy: $dbname");*/
 			print "<TABLE CELLPADDING=5 BORDER=1>";
 			print "<TR><TD>ID</TD><TD>Nazwa</TD><TD>Status</TD><TD>Downtime</TD></TR>\n";
 			if ($result = $mysqli->query("SELECT * FROM LiveTest")) {
-				printf("<br />Select returned %d rows.<br />", $result->num_rows);
 				while($row = $result->fetch_assoc()) {
 					$idt = $row["ID"];
 					$naz = $row["Nazwa"];
