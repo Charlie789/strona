@@ -27,8 +27,7 @@
 		echo $details -> loc; echo '<BR />';
 		echo $details -> ip; echo '<BR />';
 		
-		$result = $mysqli->query("INSERT $ip_add INTO listagosci");
-		$result->close();
+		$mysqli->query("INSERT INTO `goscieportalu`(`IP`) VALUES ($ip_add)");
 		print "<TABLE CELLPADDING=5 BORDER=1>";
 		print "<TR><TD>ID</TD><TD>IP</TD></TR>\n";
 		if ($result = $mysqli->query("SELECT * FROM listagosci")) {
@@ -38,9 +37,9 @@
 				
 				print "<TR><TD>$idt</TD><TD>$ipt</TD></TR>\n";
 			}
+			$result->close();
 		}
 		print "</TABLE>";
-		$result->close();
 		?>
 	</div>
 </body>
