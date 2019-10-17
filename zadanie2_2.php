@@ -28,7 +28,7 @@
 			echo "dodano do bazy danych";
 		} else {
 			echo "Error: " . $mysqli->error;
-    		}
+		}
     
 		print "<TABLE CELLPADDING=5 BORDER=1>";
 		print "<TR><TD>ID</TD><TD>IP</TD><TD>Country</TD><TD>City</TD><TD>Latitude</TD><TD>Longitude</TD></TR>\n";
@@ -42,6 +42,23 @@
 				$long = $row["Longitude"];
 				
 				print "<TR><TD>$idt</TD><TD>$ip_add</TD><TD>$country</TD><TD>$city</TD><TD>$lat</TD><TD>$long</TD></TR>\n";
+			}
+			$result->close();
+		}
+		print "</TABLE>";
+		print"\n\n Unikalne adresy IP\n";
+		$sql = "SELECT DISTINCT(IP) AS IP, `Country` AS Country, `City` as City, `Latitude` as Latitude, `Longitude` as Longitude FROM `goscieportalu` GROUP BY IP ORDER BY IP";
+		print "<TABLE CELLPADDING=5 BORDER=1>";
+		print "<TR><TD>IP</TD><TD>Country</TD><TD>City</TD><TD>Latitude</TD><TD>Longitude</TD></TR>\n";
+		if ($result = $mysqli->query($sql)) {
+			while($row = $result->fetch_assoc()) {
+				$ip_add = $row["IP"];
+				$country = $row["Country"];
+				$city = $row["City"];
+				$lat = $row["Latitude"];
+				$long = $row["Longitude"];
+				
+				print "<TR><TD>$ip_add</TD><TD>$country</TD><TD>$city</TD><TD>$lat</TD><TD>$long</TD></TR>\n";
 			}
 			$result->close();
 		}
