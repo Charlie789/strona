@@ -26,7 +26,12 @@
 		echo $details -> loc; echo '<BR />';
 		echo $details -> ip; echo '<BR />';
 		
-		$mysqli->query("INSERT INTO `goscieportalu`(`IP`) VALUES ([`123`])");
+		if($mysqli->query("INSERT INTO `goscieportalu`(`IP`) VALUES ([`123`])") === TRUE) {
+      echo "dodano do bazdy danych";
+		} else {
+      echo "Error: " . $mysqli->error;
+    }
+    
 		print "<TABLE CELLPADDING=5 BORDER=1>";
 		print "<TR><TD>ID</TD><TD>IP</TD></TR>\n";
 		if ($result = $mysqli->query("SELECT * FROM goscieportalu")) {
