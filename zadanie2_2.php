@@ -12,6 +12,7 @@
 	<div class="content">
 		Zadanie 2_2 <br/>
 		<?php
+		include 'db_connect.php';
 		$ipaddress = $_SERVER["REMOTE_ADDR"];
 		function ip_details($ip) {
 		$json = file_get_contents ("http://ipinfo.io/{$ip}/geo");
@@ -26,8 +27,8 @@
 		echo $details -> loc; echo '<BR />';
 		echo $details -> ip; echo '<BR />';
 		
-		$mysqli->query("INSERT $ip_add INTO listagosci")
-		
+		$result = $mysqli->query("INSERT $ip_add INTO listagosci");
+		$result->close();
 		print "<TABLE CELLPADDING=5 BORDER=1>";
 		print "<TR><TD>ID</TD><TD>IP</TD></TR>\n";
 		if ($result = $mysqli->query("SELECT * FROM listagosci")) {
