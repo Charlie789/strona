@@ -20,26 +20,28 @@
 		}
 		$details = ip_details($ipaddress);
 		$ip_add = $details -> ip;
-		echo $details -> region; echo '<BR />';
-		echo $details -> country; echo '<BR />';
-		echo $details -> city; echo '<BR />';
-		echo $details -> loc; echo '<BR />';
-		echo $details -> ip; echo '<BR />';
+		$country = $details -> country
+		$city = $details -> city;
+		list($lat, $long) = explode(",", $details -> loc);
 		
-		if($mysqli->query("INSERT INTO `goscieportalu`(`IP`) VALUES ('$ip_add')") === TRUE) {
-      			echo "dodano do bazy danych";
+		if($mysqli->query("INSERT INTO `goscieportalu`(`IP`, `Country`, `City`, `Latitude`, `Longitude`) VALUES ('$ip_add', '$country', '$city', '$lat', '$long')") === TRUE) {
+				echo "dodano do bazy danych";
 		} else {
 			echo "Error: " . $mysqli->error;
     		}
     
 		print "<TABLE CELLPADDING=5 BORDER=1>";
-		print "<TR><TD>ID</TD><TD>IP</TD></TR>\n";
+		print "<TR><TD>ID</TD><TD>IP</TD><TD>Country</TD><TD>City</TD><TD>Latitude</TD><TD>Longitude</TD></TR>\n";
 		if ($result = $mysqli->query("SELECT * FROM goscieportalu")) {
 			while($row = $result->fetch_assoc()) {
 				$idt = $row["ID"];
-				$ipt = $row["IP"];
+				$ip_add = $row["IP"];
+				$country = $row["Country"];
+				$city = $row["City"];
+				$lat = $row["Latitude"];
+				$long = $row["Longitude"];
 				
-				print "<TR><TD>$idt</TD><TD>$ipt</TD></TR>\n";
+				print "<TR><TD>$idt</TD><TD>$ip_add</TD><TD>$country</TD><TD>$city</TD><TD>$lat</TD><TD>$long</TD></TR>\n";
 			}
 			$result->close();
 		}
