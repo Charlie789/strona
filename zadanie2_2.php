@@ -1,9 +1,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="refresh" content="10" />
 	<title>Appel</title>
-	<link href="mainstyle.css" rel="stylesheet" type="text/css" />
+	<link href="css/mainstyle.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -27,10 +26,10 @@
 		echo $details -> loc; echo '<BR />';
 		echo $details -> ip; echo '<BR />';
 		
-		$mysqli->query("INSERT INTO `goscieportalu`(`IP`) VALUES ($ip_add)");
+		$mysqli->query("INSERT INTO `goscieportalu`(`IP`) VALUES ([`123`])");
 		print "<TABLE CELLPADDING=5 BORDER=1>";
 		print "<TR><TD>ID</TD><TD>IP</TD></TR>\n";
-		if ($result = $mysqli->query("SELECT * FROM listagosci")) {
+		if ($result = $mysqli->query("SELECT * FROM goscieportalu")) {
 			while($row = $result->fetch_assoc()) {
 				$idt = $row["ID"];
 				$ipt = $row["IP"];
@@ -39,6 +38,7 @@
 			}
 			$result->close();
 		}
+		$mysqli->close();
 		print "</TABLE>";
 		?>
 	</div>
