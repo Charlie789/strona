@@ -6,7 +6,4 @@ $mysqli = new mysqli("127.0.0.1", "31549668_zadanie1", $pass,
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 } 
-
-echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
-echo "Host information: " . mysqli_get_host_info($mysqli) . PHP_EOL;
 ?>
