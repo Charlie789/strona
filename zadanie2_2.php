@@ -19,11 +19,27 @@
 		return $details;
 		}
 		$details = ip_details($ipaddress);
+		$ip_add = $details -> ip;
 		echo $details -> region; echo '<BR />';
 		echo $details -> country; echo '<BR />';
 		echo $details -> city; echo '<BR />';
 		echo $details -> loc; echo '<BR />';
 		echo $details -> ip; echo '<BR />';
+		
+		$mysqli->query("INSERT $ip_add INTO listagosci")
+		
+		print "<TABLE CELLPADDING=5 BORDER=1>";
+		print "<TR><TD>ID</TD><TD>IP</TD></TR>\n";
+		if ($result = $mysqli->query("SELECT * FROM listagosci")) {
+			while($row = $result->fetch_assoc()) {
+				$idt = $row["ID"];
+				$ipt = $row["IP"];
+				
+				print "<TR><TD>$idt</TD><TD>$ipt</TD></TR>\n";
+			}
+		}
+		print "</TABLE>";
+		$result->close();
 		?>
 	</div>
 </body>
