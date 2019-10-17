@@ -20,12 +20,12 @@
 		}
 		$details = ip_details($ipaddress);
 		$ip_add = $details -> ip;
-		$country = $details -> country
+		$country = $details -> country;
 		$city = $details -> city;
 		list($lat, $long) = explode(",", $details -> loc);
 		
 		if($mysqli->query("INSERT INTO `goscieportalu`(`IP`, `Country`, `City`, `Latitude`, `Longitude`) VALUES ('$ip_add', '$country', '$city', '$lat', '$long')") === TRUE) {
-				echo "dodano do bazy danych";
+			echo "dodano do bazy danych";
 		} else {
 			echo "Error: " . $mysqli->error;
     		}
