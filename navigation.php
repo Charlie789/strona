@@ -12,6 +12,10 @@ echo
 		<a href="/zadanie2/zad2_dns.php" title="Zadanie 2 DNS">DNS</a>
 		<a href="/zadanie2/zad2_czas.php" title="Zadanie 2 Czas">Czas</a>
 		<a href="/zadanie2/zad2_goscie.php" title="Zadanie 2 Goscie portalu">Goście Portalu</a>
+	</div>
+	<button type="button" class="collapsible">Zadanie 3</button>
+	<div class="collapse_content">
+		<a href="/zadanie3/index.php" title="Index">Index</a>
 	</div>	
 </div>
 
