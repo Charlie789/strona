@@ -17,6 +17,7 @@ echo
 	<div class="collapse_content">
 		<a href="/zadanie3/index.php" title="Index">Index</a>
 		<a href="/zadanie3/konwersacja.php" title="Konwersacja">Konwersacja</a>
+		<a href="/zadanie3/konwersacja_sql.php" title="Konwersacja SQL">Konwersacja SQL</a>
 	</div>	
 </div>
 
