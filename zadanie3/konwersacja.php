@@ -8,12 +8,14 @@
 <body>
 	<?php include '/navigation.php'; ?>
 
+	<script src="/js/cookie.js"></script>
+
 	<div class="content">
 		<h1>Konwersacja</h1>
-		<form method="POST" action="dodaj.php">
+		<form method="POST" action="dodaj.php" onsubmit="createCookie(user, document.getElementById('user').value)">
 		<br>
-		Nick:<input type="text" name="user" maxlength="10" size="10"><br>
-		Post:<input type="text" name="post" maxlength="90" size="90"><br>
+		Nick:<input type="text" name="user" maxlength="10" size="10" id="user"><br>
+		Post:<input type="text" name="post" maxlength="90" size="90" id="post"><br>
 		<input type="submit" value="Send"/>
 		</form>
 		
