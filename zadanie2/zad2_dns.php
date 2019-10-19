@@ -15,9 +15,8 @@
 				<h3>Skrypt dns_get_record</h3>';
 			$result = dns_get_record("utp.edu.pl");
 			print_r($result);
-			echo '</p>';
-
-			echo '<p>
+			echo '</p>
+				<p>
 				<h3>Pozostałe skrypty</h3>';
 			$ip = gethostbyname('utp.edu.pl');
 			echo $ip . '<BR />';

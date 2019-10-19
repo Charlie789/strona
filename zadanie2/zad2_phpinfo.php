@@ -9,7 +9,7 @@
 	<?php include '/navigation.php'; ?>
 
 	<div class="content">
-		PHPInfo <br/>
+		<h1>PHPInfo</h1>
 		<?php
 			echo phpinfo ();
 		?>

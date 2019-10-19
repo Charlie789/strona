@@ -9,7 +9,8 @@
 	<?php include '/navigation.php'; ?>
 
 	<div class="content">
-		Zadanie 2_2 <br/>
+		<h1>Goście portalu</h1>
+		<h3>Lista gości</h3>
 		<?php
 		include 'db_connect.php';
 		$ipaddress = $_SERVER["REMOTE_ADDR"];
@@ -47,7 +48,7 @@
 			$result->close();
 		}
 		print "</TABLE>";
-		print"\n\n Unikalne adresy IP\n";
+		print"\n\n <p><h3>Unikalne adresy IP</h3>\n";
 		$sql = "SELECT DISTINCT(IP) AS IP, `Country` AS Country, `City` as City, `Latitude` as Latitude, `Longitude` as Longitude FROM `goscieportalu` GROUP BY IP ORDER BY IP";
 		print "<TABLE CELLPADDING=5 BORDER=1>";
 		print "<TR><TD>IP</TD><TD>Country</TD><TD>City</TD><TD>Latitude</TD><TD>Longitude</TD></TR>\n";
@@ -64,7 +65,7 @@
 			$result->close();
 		}
 		$mysqli->close();
-		print "</TABLE>";
+		print "</TABLE></p>";
 		?>
 	</div>
 </body>
