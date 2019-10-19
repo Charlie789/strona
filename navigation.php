@@ -16,6 +16,7 @@ echo
 	<button type="button" class="collapsible">Zadanie 3</button>
 	<div class="collapse_content">
 		<a href="/zadanie3/index.php" title="Index">Index</a>
+		<a href="/zadanie3/konwersacja.php" title="Konwersacja">Konwersacja</a>
 	</div>	
 </div>
 
