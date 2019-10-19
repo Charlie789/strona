@@ -8,4 +8,5 @@
 		$plik = fopen ("zapis.txt", "a+");
 		fwrite ($plik, $wpis);
 	}
+	header("Location: konwersacja.php");
 ?>
