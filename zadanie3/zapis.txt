@@ -1,9 +1,0 @@
-<table border=”1” width="90%">
-				<tr><td>hej</td><td width="80">test</td><td width="60" bgcolor="yellow">13:38:58</td></tr></table><br><table border=”1” width="90%">
-				<tr><td>dsdsd</td><td width="80">xd</td><td width="60" bgcolor="yellow">13:39:27</td></tr></table><br><table border=”1” width="90%">
-				<tr><td>asdasda</td><td width="80">xd</td><td width="60" bgcolor="yellow">13:39:34</td></tr></table><br><table border=”1” width="90%">
-				<tr><td></td><td width="80">f</td><td width="60" bgcolor="yellow">13:40:56</td></tr></table><br><table border=”1” width="90%">
-				<tr><td>fg</td><td width="80">fg</td><td width="60" bgcolor="yellow">14:20:20</td></tr></table><br><table border=”1” width="90%">
-		<tr><td>s</td><td width="80">sd</td><td width="60" bgcolor="yellow">14:39:41</td></tr></table><br><table border=”1” width="90%">
-		<tr><td>s</td><td width="80">sd</td><td width="60" bgcolor="yellow">14:42:33</td></tr></table><br><table border=”1” width="90%">
-		<tr><td>s</td><td width="80">test</td><td width="60" bgcolor="yellow">14:42:39</td></tr></table><br>
