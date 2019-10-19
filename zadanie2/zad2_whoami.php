@@ -9,7 +9,7 @@
 	<?php include '/navigation.php'; ?>
 
 	<div class="content">
-		PHPInfo <br/>
+		WhoAmI <br/>
 		<?php
 			echo exec('whoami');
 		?>
