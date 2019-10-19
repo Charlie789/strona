@@ -31,7 +31,9 @@
 		
 		Posty:
 		<br>
-		<? include ("zapis.txt");?>
+		<? if(file_exists("zapis.txt"))
+			include ("zapis.txt");
+		?>
 		<br>
 	</div>
 </body>
