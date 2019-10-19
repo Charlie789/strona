@@ -9,15 +9,12 @@
 	<?php include '/navigation.php'; ?>
 
 	<div class="content">
-		<h1>Informacje o serwerze</h1>
+		<h1>Czas</h1>
 		<?php
-			exec ('TERM=xterm /usr/bin/top n 1 b i', $top, $error );
-			echo nl2br(implode("\n",$top));
-			if ($error){
-				exec ('TERM=xterm /usr/bin/top n 1 b 2>&1', $error );
-				echo "Error: ";
-				exit ($error[0]);
-			}
+			$czas1 = time ();
+			$czas2 = date ("r", $czas1);
+			echo 'Czas uniksowy: ' . $czas1 . "<BR />";
+			echo 'Czytelny format: ' . $czas2;
 		?>
 	</div>
 </body>

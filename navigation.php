@@ -10,6 +10,7 @@ echo
 		<a href="/zadanie2/zad2_whoami.php" title="Zadanie 2 WhoAmI">WhoAmI</a>
 		<a href="/zadanie2/zad2_serverinfo.php" title="Zadanie 2 Informacje o serwerze">Server Info</a>
 		<a href="/zadanie2/zad2_dns.php" title="Zadanie 2 DNS">DNS</a>
+		<a href="/zadanie2/zad2_czas.php" title="Zadanie 2 Czas">Czas</a>
 		<a href="/zadanie2/zad2_goscie.php" title="Zadanie 2 Goscie portalu">Goście Portalu</a>
 	</div>	
 </div>
