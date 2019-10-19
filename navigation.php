@@ -7,6 +7,7 @@ echo
 	<div class="collapse_content">
 		<a href="/zadanie2/zad2_netstat.php" title="Zadanie 2 Netstat">Netstat</a>
 		<a href="/zadanie2/zad2_phpinfo.php" title="Zadanie 2 PHPInfo">PHPInfo</a>
+		<a href="/zadanie2/zad2_whoami.php" title="Zadanie 2 WhoAmI">WhoAmI</a>
 		<a href="/zadanie2/zad2_goscie.php" title="Zadanie 2 Goscie portalu">Goście Portalu</a>
 	</div>	
 </div>
