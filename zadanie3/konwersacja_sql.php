@@ -16,7 +16,7 @@
 	<div class="content">
 		<h1>Konwersacja</h1>
 		Skrypt korzysta z pliku .txt do przechowywania konwersacji oraz ciasteczek do przechowywania Nicku
-		<form method="POST" action="dodaj_sql.php" onsubmit="createCookie('user', document.getElementById('user').value)">
+		<form method="POST" action="dodaj_sql.php" onsubmit="createCookie('user', document.getElementById('user_input').value)">
 		<br>
 		Nick:<input type="text" name="user" maxlength="20" size="20" id="user_input"><br>
 		Post:<input type="text" name="post" maxlength="100" size="100" id="post_input"><br>
