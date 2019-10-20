@@ -6,7 +6,10 @@
 </head>
 
 <body>
-	<?php include '/navigation.php'; ?>
+	<?php
+	include '/navigation.php';
+	include '/db_connect.php';
+	?>
 
 	<script src="/js/cookie.js"></script>
 
@@ -15,21 +18,30 @@
 		Skrypt korzysta z pliku .txt do przechowywania konwersacji oraz ciasteczek do przechowywania Nicku
 		<form method="POST" action="dodaj_sql.php" onsubmit="createCookie('user', document.getElementById('user').value)">
 		<br>
-		Nick:<input type="text" name="user" maxlength="10" size="10" id="user"><br>
-		Post:<input type="text" name="post" maxlength="90" size="90" id="post"><br>
-		<input type="submit" value="Send"/>
+		Nick:<input type="text" name="user" maxlength="20" size="20" id="user_input"><br>
+		Post:<input type="text" name="post" maxlength="100" size="100" id="post_input"><br>
+		<input type="submit" value="Send" id="send_button"/>
 		</form>
-		
+
 		Posty:
 		<br>
-		<? if(file_exists("zapis.txt"))
-			include ("zapis.txt");
+		<?php
+		if ($result = $mysqli->query("SELECT * FROM komunikaty")) {
+			while($row = $result->fetch_assoc()) {
+				$nick = $row["nick"];
+				$data = $row["data"];
+				$komunikat = $row["komunikat"];
+
+				print '<br><table border=”1” width="90%">
+                <tr><td>$komunikat</td><td width="80">$nick</td><td width="60" bgcolor="yellow">$data</td></tr></table><br>';
+			}
+			$result->close();
+		}
 		?>
-		<br>
 	</div>
 
 	<script>
-		document.getElementById('user').value = readCookie('user');
+		document.getElementById('user_input').value = readCookie('user');
 	</script>
 </body>
 </html>
