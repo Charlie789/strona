@@ -24,7 +24,7 @@
 		</form>
 
 		Posty:
-		<br>
+		<br><br>
 		<?php
 		if ($result = $mysqli->query("SELECT * FROM komunikaty")) {
 			while($row = $result->fetch_assoc()) {
@@ -32,9 +32,12 @@
 				$data = $row["data"];
 				$komunikat = $row["komunikat"];
 
-				print '<br><table border=”1” width="90%">
-                <tr><td>$komunikat</td><td width="80">$nick</td><td width="60" bgcolor="yellow">$data</td></tr></table><br>';
+				print "
+				<table border='1' width='95%'>
+               			<tr><td>$komunikat</td><td width='15%'>$nick</td><td width='20%' bgcolor='yellow'>$data</td></tr>
+				</table><br>";
 			}
+			print "\n";
 			$result->close();
 		}
 		?>
