@@ -11,7 +11,7 @@
 	<script src="/js/cookie.js"></script>
 
 	<div class="content">
-		<h1>Konwersacja</h1>
+		<h1>Konwersacja bez bazy danych</h1>
 		Skrypt korzysta z pliku .txt do przechowywania konwersacji oraz ciasteczek do przechowywania Nicku
 		<form method="POST" action="dodaj.php" onsubmit="createCookie('user', document.getElementById('user').value)">
 		<br>

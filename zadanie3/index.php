@@ -9,7 +9,7 @@
 	<?php include '/navigation.php'; ?>
 
 	<div class="content">
-		<h1>PHPInfo</h1>
+		<h1>Konwersacja bez bazy danych i ciasteczek</h1>
 		<?php
 			$godzina = date('H:i:s', time());
 			$user = $_POST['user'];
