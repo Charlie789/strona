@@ -26,7 +26,7 @@
 		Posty:
 		<br><br>
 		<?php
-		if ($result = $mysqli->query("SELECT * FROM komunikaty")) {
+		if ($result = $mysqli->query("SELECT * FROM komunikaty ORDER BY `ID` DESC")) {
 			while($row = $result->fetch_assoc()) {
 				$nick = $row["nick"];
 				$data = $row["data"];
