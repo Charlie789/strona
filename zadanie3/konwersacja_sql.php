@@ -25,7 +25,7 @@
 
 		Posty:
 		<br><br>
-		<div class="comunnication_table">
+		<div style="height:300px;overflow:auto;">
 			<table border='1' width='95%'>
 			<?php
 			if ($result = $mysqli->query("SELECT * FROM komunikaty ORDER BY `ID` DESC")) {

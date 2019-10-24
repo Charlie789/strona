@@ -57,6 +57,6 @@ body {
 }
 
 .communication_table {
-	height: 300px;
-    overflow: scroll;
+  height: 100px;
+  overflow: scroll;
 }
