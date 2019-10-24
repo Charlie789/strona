@@ -25,22 +25,23 @@
 
 		Posty:
 		<br><br>
-		<?php
-		if ($result = $mysqli->query("SELECT * FROM komunikaty ORDER BY `ID` DESC")) {
-			while($row = $result->fetch_assoc()) {
-				$nick = $row["nick"];
-				$data = $row["data"];
-				$komunikat = $row["komunikat"];
+		<div class="comunnication_table">
+			<table border='1' width='95%'>
+			<?php
+			if ($result = $mysqli->query("SELECT * FROM komunikaty ORDER BY `ID` DESC")) {
+				while($row = $result->fetch_assoc()) {
+					$nick = $row["nick"];
+					$data = $row["data"];
+					$komunikat = $row["komunikat"];
 
-				print "
-				<table border='1' width='95%'>
-               			<tr><td>$komunikat</td><td width='15%'>$nick</td><td width='20%' bgcolor='yellow'>$data</td></tr>
-				</table><br>";
+					print "
+							<tr><td>$komunikat</td><td width='15%'>$nick</td><td width='20%' bgcolor='yellow'>$data</td></tr>";
+				}
+				print "</table>";
+				$result->close();
 			}
-			print "\n";
-			$result->close();
-		}
-		?>
+			?>
+		</div>
 	</div>
 
 	<script>

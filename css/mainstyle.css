@@ -55,3 +55,8 @@ body {
   overflow: hidden;
   background-color: #111;
 }
+
+.communication_table {
+	height: 300px;
+    overflow: scroll;
+}
