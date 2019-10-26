@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<?php include '/navigation.php'; ?>
+	<?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php'); ?>
 
 	<script src="/js/cookie.js"></script>
 
