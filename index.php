@@ -9,7 +9,7 @@
 
 <body>
 
-	<?php include($_SERVER['DOCUMENT_ROOT'].'navigation.php'); ?>
+	<?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php'); ?>
 
 	<div class="content">
 		Strona główna

@@ -7,8 +7,8 @@
 
 <body>
 	<?php
-	include '/navigation.php';
-	include '/db_connect.php';
+	include($_SERVER['DOCUMENT_ROOT'].'/navigation.php');
+	include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 	?>
 
 	<script src="/js/cookie.js"></script>
