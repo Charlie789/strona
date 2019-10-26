@@ -22,7 +22,7 @@
 		
 		Posty:
 		<br>
-		<? if(file_exists("zapis.txt"))
+		<?php if(file_exists("zapis.txt"))
 			include ("zapis.txt");
 		?>
 		<br>
