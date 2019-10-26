@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<?php include '/navigation.php'; ?>
+	<?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php'); ?>
 
 	<div class="content">
 		<h1>Konwersacja bez bazy danych i ciasteczek</h1>
@@ -31,7 +31,7 @@
 		
 		Posty:
 		<br>
-		<? if(file_exists("zapis.txt"))
+		<?php if(file_exists("zapis.txt"))
 			include ("zapis.txt");
 		?>
 		<br>

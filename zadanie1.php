@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<?php include '/navigation.php'; ?>
+	<?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php'); ?>
 
 	<div class="content">
 		Zadanie 1
