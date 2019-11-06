@@ -19,6 +19,7 @@ echo
 		<a href="/zadanie3/konwersacja.php" title="Konwersacja">Konwersacja</a>
 		<a href="/zadanie3/konwersacja_sql.php" title="Konwersacja SQL">Konwersacja SQL</a>
 	</div>	
+	<a href="/zadanie4/index.php" title="Zadanie 4">Zadanie 4</a>
 </div>
 
 <script src="/js/collapse.js"></script>';
