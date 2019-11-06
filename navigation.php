@@ -22,6 +22,7 @@ echo
 	<button type="button" class="collapsible">Zadanie 4</button>
 	<div class="collapse_content">
 		<a href="/zadanie4/plottest.php" title="Test wykresu">Test wykresu</a>
+		<a href="/zadanie4/symulator.php" title="Symulator danych">Symulator danych</a>
 	</div>	
 </div>
 
