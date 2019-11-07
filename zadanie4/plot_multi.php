@@ -6,6 +6,7 @@ $data = array();
 
 if ($result = $mysqli->query("SELECT * FROM pomiary_multi")) {
   while($row = $result->fetch_assoc()) {
+    $idt = $row["ID"];
     $x1 = $row["X1"];
     $x2 = $row["X2"];
     $x3 = $row["X3"];
@@ -13,7 +14,7 @@ if ($result = $mysqli->query("SELECT * FROM pomiary_multi")) {
     $x5 = $row["X5"];
     $time = $row["data_godzina"];
 
-    array_push($data, array($time, $x1, $x2, $x3, $x4, $x5));
+    array_push($data, array($idt, $x1, $x2, $x3, $x4, $x5));
   
   }
   $result->close();
@@ -34,6 +35,8 @@ $plot->SetDataType('text-data');
 $plot->SetDataValues($data);
 
 $plot->SetTitle('Wykres słupkowy z aktualnym stanem danych');
+
+$plot->SetLegend(array('x1', 'x2', 'x3', 'x4', 'x5'));
 
 $plot->SetXTickLabelPos('none');
 $plot->SetXTickPos('none');
