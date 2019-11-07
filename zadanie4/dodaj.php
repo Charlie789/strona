@@ -9,7 +9,7 @@
 
     include 'db_connect.php';
 
-    if($mysqli->query("INSERT INTO `pomiary_multi`(`x1`, `x2`, `x3`, `x4`, `x5`, `data_godzina`) VALUES ('$x1', '$x2', '$x3', '$x4', '$x5', NOW()") === TRUE) {
+    if($mysqli->query("INSERT INTO `pomiary_multi`(`x1`, `x2`, `x3`, `x4`, `x5`, `data_godzina`) VALUES ('$x1', '$x2', '$x3', '$x4', '$x5', NOW())") === TRUE) {
         echo "dodano do bazy danych";
     } else {
         echo "Error: " . $mysqli->error;
