@@ -23,6 +23,7 @@ echo
 	<div class="collapse_content">
 		<a href="/zadanie4/plottest.php" title="Test wykresu">Test wykresu</a>
 		<a href="/zadanie4/symulator.php" title="Symulator danych">Symulator danych</a>
+		<a href="/zadanie4/plot_single.php" title="Wykres pojedynczy">Wykres pojedynczy</a>
 	</div>	
 </div>
 
