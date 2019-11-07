@@ -26,6 +26,7 @@ echo
 		<a href="/zadanie4/plot_single.php" title="Wykres pojedynczy">Wykres pojedynczy</a>
 		<a href="/zadanie4/symulator_multi.php" title="Symulator danych dodawanie">Symulator danych dodawanie</a>
 		<a href="/zadanie4/plot_multi.php" title="Wykres wszystkich pomiarów">Wykres wszystkich pomiarów</a>
+		<a href="/zadanie4/plan.php" title="Plan mieszkania">Plan mieszkania</a>
 	</div>	
 </div>
 

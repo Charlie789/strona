@@ -9,7 +9,7 @@
     <?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php'); ?>
 
     <div class="content">
-        <h1>Symulator danych aktualizujący dane</h1>
+        <h1>Symulator danych dodający nowe dane</h1>
         <form id="data_form" method="POST" action="dodaj.php">
         <br>
         X1:<input type="text" name="x1" maxlength="10" size="20" id="x1"><br>
