@@ -4,7 +4,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 
 $data = array();
 
-if ($result = $mysqli->query("SELECT * FROM pomiary")) {
+if ($result = $mysqli->query("SELECT * FROM pomiary_multi")) {
   while($row = $result->fetch_assoc()) {
     $x1 = $row["X1"];
     $x2 = $row["X2"];
