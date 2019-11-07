@@ -60,3 +60,13 @@ body {
   height: 100px;
   overflow: scroll;
 }
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.plan {
+  height: 70%;
+  width: 50%;
+}
