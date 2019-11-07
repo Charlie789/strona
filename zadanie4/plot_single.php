@@ -16,21 +16,23 @@ if ($result = $mysqli->query("SELECT * FROM pomiary")) {
 }
 
 $data = array(
-  array('x1', 40), array('x2', 30), array('x3', 20),
-  array('x4', 10), array('x5',  3),
+  array('x1', $x1), array('x2', $x2), array('x3', $x3),
+  array('x4', $x4), array('x5', $x5),
 );
 
 $plot = new PHPlot(800, 600);
 $plot->SetImageBorderType('plain');
 
+$path='/fonts';
+$plot->SetTTFPath($path);
+$plot->SetDefaultTTFont('Roboto-Black.ttf');
+
 $plot->SetPlotType('bars');
 $plot->SetDataType('text-data');
 $plot->SetDataValues($data);
 
-# Main plot title:
-$plot->SetTitle('Shaded Bar Chart with 5 Data Sets');
+$plot->SetTitle('Wykres słupkowy z aktualnym stanem danych');
 
-# Turn off X tick labels and ticks because they don't apply here:
 $plot->SetXTickLabelPos('none');
 $plot->SetXTickPos('none');
 
