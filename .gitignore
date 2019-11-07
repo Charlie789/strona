@@ -1,5 +1,5 @@
 pass.php
-*.save
+*.save*
 zadanie3/*.txt
 zaliczone_na_zajeciach.txt
 .htaccess
