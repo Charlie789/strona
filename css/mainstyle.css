@@ -70,3 +70,25 @@ img {
   height: 70%;
   width: 50%;
 }
+
+.x1 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+
+.x2 {
+  position: absolute;
+}
+
+.x3 {
+  position: absolute;
+}
+
+.x4 {
+  position: absolute;
+}
+
+.x5 {
+  position: absolute;
+}

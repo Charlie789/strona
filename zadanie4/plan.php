@@ -12,6 +12,7 @@
 		<h1>plan mieszkania z czujnikami</h1>
 		<div class="plan">
 			<img src="/img/plan.jpg" alt="Plan" style="width:100%;">
+			<div class="x1">123</div>
 		</div>
 	</div>
 </body>
