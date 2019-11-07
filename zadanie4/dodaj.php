@@ -1,5 +1,5 @@
 <?php
-    header("Location: symulator.php");
+    header("Location: symulator_multi.php");
 
     $x1 = $_POST['x1'];
     $x2 = $_POST['x2'];
