@@ -34,6 +34,18 @@
 			<div class="x1">
 				<?php echo end($data)[1]; ?>
 			</div>
+			<div class="x2">
+				<?php echo end($data)[2]; ?>
+			</div>
+			<div class="x3">
+				<?php echo end($data)[3]; ?>
+			</div>
+			<div class="x4">
+				<?php echo end($data)[4]; ?>
+			</div>
+			<div class="x5">
+				<?php echo end($data)[5]; ?>
+			</div>
 		</div>
 	</div>
 </body>

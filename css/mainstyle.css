@@ -78,21 +78,29 @@ img {
 .x1 {
   position: absolute;
   top: 44%;
-  left: 12%;
+  left: 30%;
 }
 
 .x2 {
   position: absolute;
+  top: 44%;
+  left: 12%;
 }
 
 .x3 {
   position: absolute;
+  top: 40%;
+  right: 30%;
 }
 
 .x4 {
   position: absolute;
+  top: 20%;
+  left: 30%;
 }
 
 .x5 {
   position: absolute;
+  top: 20%;
+  left: 40%;
 }
