@@ -26,6 +26,9 @@ $plot->SetImageBorderType('plain');
 $path='/fonts';
 $plot->SetTTFPath($path);
 $plot->SetDefaultTTFont('Roboto-Black.ttf');
+$plot->SetFont('x_label', 'Roboto-Black.ttf', '15');
+$plot->SetFont('y_label', 'Roboto-Black.ttf', '15');
+$plot->SetFont('title', 'Roboto-Black.ttf', '15');
 
 $plot->SetPlotType('bars');
 $plot->SetDataType('text-data');
