@@ -6,8 +6,7 @@
 </head>
 
 <body>
-	<?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php'); ?>
-
+	<?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php');
 	include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 
 	$data = array();
@@ -27,7 +26,7 @@
 		}
 		$result->close();
 	}
-
+	?>
 	<div class="content">
 		<h1>plan mieszkania z czujnikami</h1>
 		<div class="plan">
