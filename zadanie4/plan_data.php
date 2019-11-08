@@ -5,9 +5,9 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
         if ($result = $mysqli->query("SELECT * FROM pomiary_data")) {
                 while($row = $result->fetch_assoc()) {
                         $idt = $row["ID"];
-                        $x1 = $row["X1"];
-                        $x2 = $row["X2"];
-                        $x3 = $row["X3"];
+                        $x1 = $row["x1"];
+                        $x2 = $row["x2"];
+                        $x3 = $row["x3"];
                         $zas1 = $row["zas1"];
                         $zas2 = $row["zas2"];
 						$wen1 = $row["wen1"];
