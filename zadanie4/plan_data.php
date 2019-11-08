@@ -70,7 +70,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 				echo '</div>';
 			} else {
 				echo '<div class="fire">';
-				echo	'<img src="/img/ac3.jpg" />';
+				echo	'<img src="/img/went.gif" />';
 				echo '</div>';	
 			}?>
 			<?php if($wen2 == 0) {
@@ -83,7 +83,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 				echo '</div>';
 			} else {
 				echo '<div class="water">';
-				echo	'<img src="/img/ac3.jpg" />';
+				echo	'<img src="/img/went.gif" />';
 				echo '</div>';	
 			}?>
 			<?php if($och1 == 1) {
