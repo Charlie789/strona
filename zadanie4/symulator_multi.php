@@ -17,6 +17,10 @@
         X3:<input type="text" name="x3" maxlength="10" size="20" id="x3"><br>
         X4:<input type="text" name="x4" maxlength="10" size="20" id="x4"><br>
         X5:<input type="text" name="x5" maxlength="10" size="20" id="x5"><br>
+        Ogień: <select name="Fire" multiple size="5">
+                    <option value="0">NIE</option>
+                    <option value="1">TAK</option>
+                </select>
         <input type="submit" />
         </form>
     </div>
