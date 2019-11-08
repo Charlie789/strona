@@ -99,7 +99,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 				echo	'<img src="/img/fire.gif" />';
 				echo '</div>';
 			} ?>
-			<?php if($woda == 1) {
+			<?php if($water == 1) {
 				echo '<div class="water">';
 				echo	'<img src="/img/water.jpg" />';
 				echo '</div>';
