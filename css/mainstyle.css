@@ -110,3 +110,9 @@ img {
   top: 40%;
   left: 50%;
 }
+
+.water {
+  position: absolute;
+  top: 60%;
+  left: 30%;
+}
