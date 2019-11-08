@@ -43,20 +43,20 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 				<?php echo $x3; ?>
 			</div>
 			<?php if($zas1 == 1) {
-				echo '<div class="fire">';
+				echo '<div class="x4">';
 				echo	'<img src="/img/zas.jpg" />';
 				echo '</div>';
 			} else {
-				echo '<div class="fire">';
+				echo '<div class="x4">';
 				echo	'<img src="/img/awaria.png" />';
 				echo '</div>';
 			}?>
 			<?php if($zas2 == 1) {
-				echo '<div class="water">';
+				echo '<div class="x5">';
 				echo	'<img src="/img/zas.jpg" />';
 				echo '</div>';
 			} else {
-				echo '<div class="water">';
+				echo '<div class="x5">';
 				echo	'<img src="/img/awaria.png" />';
 				echo '</div>';
 			}?>
