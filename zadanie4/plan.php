@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 
 	$data = array();
-        $data1 = array();
+	$data1 = array();
 	$data2 = array();
 	$data3 = array();
 	$data4 = array();
@@ -18,6 +18,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
                         $x5 = $row["X5"];
 						$time = $row["data_godzina"];
 						$fire = $row['ogien'];
+						$water = $row['woda'];
 
                         array_push($data1, array("label"=>$idt, "y"=>$x1));
 						array_push($data2, array("label"=>$idt, "y"=>$x2));
@@ -96,6 +97,11 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 			<?php if($fire == 1) {
 				echo '<div class="fire">';
 				echo	'<img src="/img/fire.gif" />';
+				echo '</div>';
+			} ?>
+			<?php if($woda == 1) {
+				echo '<div class="water">';
+				echo	'<img src="/img/water.jpg" />';
 				echo '</div>';
 			} ?>
 		</div>
