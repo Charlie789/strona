@@ -16,14 +16,15 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
                         $x3 = $row["X3"];
                         $x4 = $row["X4"];
                         $x5 = $row["X5"];
-                        $time = $row["data_godzina"];
+						$time = $row["data_godzina"];
+						$fire = $row['ogien'];
 
                         array_push($data1, array("label"=>$idt, "y"=>$x1));
-			array_push($data2, array("label"=>$idt, "y"=>$x2));
-			array_push($data3, array("label"=>$idt, "y"=>$x3));
-			array_push($data4, array("label"=>$idt, "y"=>$x4));
-			array_push($data5, array("label"=>$idt, "y"=>$x5));
-			array_push($data, array($idt, $x1, $x2, $x3, $x4, $x5));
+						array_push($data2, array("label"=>$idt, "y"=>$x2));
+						array_push($data3, array("label"=>$idt, "y"=>$x3));
+						array_push($data4, array("label"=>$idt, "y"=>$x4));
+						array_push($data5, array("label"=>$idt, "y"=>$x5));
+						array_push($data, array($idt, $x1, $x2, $x3, $x4, $x5));
 
                 }
                 $result->close();
@@ -92,9 +93,11 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 			<div class="x5">
 				<?php echo end($data)[5]; ?>
 			</div>
-			<div class="fire">
-				<img src="/img/fire.gif" />
-			</div>
+			<?php if($fire == 1) {
+				echo '<div class="fire">';
+				echo	'<img src="/img/fire.gif" />';
+				echo '</div>';
+			} ?>
 		</div>
 		<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 	</div>
