@@ -27,6 +27,8 @@ echo
 		<a href="/zadanie4/symulator_multi.php" title="Symulator danych dodawanie">Symulator danych dodawanie</a>
 		<a href="/zadanie4/plot_multi.php" title="Wykres wszystkich pomiarów">Wykres wszystkich pomiarów</a>
 		<a href="/zadanie4/plan.php" title="Plan mieszkania">Plan mieszkania</a>
+		<a href="/zadanie4/symulator_data.php" title="Symulator danych data center">Symulator danych data center</a>
+		<a href="/zadanie4/plan_data.php" title="Plan Data Center">Plan Data Center</a>
 	</div>	
 </div>
 
