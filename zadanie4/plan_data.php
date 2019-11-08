@@ -60,16 +60,32 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 				echo	'<img src="/img/awaria.png" />';
 				echo '</div>';
 			}?>
-			<?php if($wen1 == 1) {
+			<?php if($wen1 == 0) {
 				echo '<div class="fire">';
-				echo	'<img src="/img/fire.gif" />';
+				echo	'<img src="/img/ac0.jpg" />';
 				echo '</div>';
-			} ?>
-			<?php if($wen2 == 1) {
+			} else if($wen1 == 1){
+				echo '<div class="fire">';
+				echo	'<img src="/img/ac.png" />';
+				echo '</div>';
+			} else {
+				echo '<div class="fire">';
+				echo	'<img src="/img/ac3.jpg" />';
+				echo '</div>';	
+			}?>
+			<?php if($wen2 == 0) {
 				echo '<div class="water">';
-				echo	'<img src="/img/water.jpg" />';
+				echo	'<img src="/img/ac0.jpg" />';
 				echo '</div>';
-			} ?>
+			} else if($wen2 == 1){
+				echo '<div class="water">';
+				echo	'<img src="/img/ac.png" />';
+				echo '</div>';
+			} else {
+				echo '<div class="water">';
+				echo	'<img src="/img/ac3.jpg" />';
+				echo '</div>';	
+			}?>
 		</div>
 	</div>
 </body>
