@@ -42,12 +42,24 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 			<div class="x3">
 				<?php echo $x3; ?>
 			</div>
-			<div class="x4">
-				<?php echo $zas1; ?>
-			</div>
-			<div class="x5">
-				<?php echo $zas2; ?>
-			</div>
+			<?php if($zas1 == 1) {
+				echo '<div class="fire">';
+				echo	'<img src="/img/zas.jpg" />';
+				echo '</div>';
+			} else {
+				echo '<div class="fire">';
+				echo	'<img src="/img/awaria.png" />';
+				echo '</div>';
+			}?>
+			<?php if($zas2 == 1) {
+				echo '<div class="water">';
+				echo	'<img src="/img/zas.jpg" />';
+				echo '</div>';
+			} else {
+				echo '<div class="water">';
+				echo	'<img src="/img/awaria.png" />';
+				echo '</div>';
+			}?>
 			<?php if($wen1 == 1) {
 				echo '<div class="fire">';
 				echo	'<img src="/img/fire.gif" />';
