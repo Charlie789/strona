@@ -92,6 +92,9 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 			<div class="x5">
 				<?php echo end($data)[5]; ?>
 			</div>
+			<div class="fire">
+				<img src="/img/fire.gif" />
+			</div>
 		</div>
 		<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 	</div>

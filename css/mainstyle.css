@@ -104,3 +104,9 @@ img {
   top: 14%;
   left: 43%;
 }
+
+.fire {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
