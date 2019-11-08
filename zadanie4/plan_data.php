@@ -66,7 +66,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 				echo '</div>';
 			} else if($wen1 == 1){
 				echo '<div class="fire">';
-				echo	'<img src="/img/ac.png" />';
+				echo	'<img src="/img/went2.gif" />';
 				echo '</div>';
 			} else {
 				echo '<div class="fire">';
@@ -79,7 +79,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 				echo '</div>';
 			} else if($wen2 == 1){
 				echo '<div class="water">';
-				echo	'<img src="/img/ac.png" />';
+				echo	'<img src="/img/went2.gif" />';
 				echo '</div>';
 			} else {
 				echo '<div class="water">';
