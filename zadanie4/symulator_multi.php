@@ -21,7 +21,6 @@
                     <option value="0">NIE</option>
                     <option value="1">TAK</option>
                 </select>
-        <input type="submit" /><br>
         Zalane: <select name="water" multiple size="2">
                     <option value="0">NIE</option>
                     <option value="1">TAK</option>
