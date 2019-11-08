@@ -86,6 +86,16 @@ include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 				echo	'<img src="/img/ac3.jpg" />';
 				echo '</div>';	
 			}?>
+			<?php if($och1 == 1) {
+				echo '<div class="feet1">';
+				echo	'<img src="/img/stopy.gif" />';
+				echo '</div>';
+			}?>
+			<?php if($och == 1) {
+				echo '<div class="feet2">';
+				echo	'<img src="/img/stopy.gif" />';
+				echo '</div>';
+			}?>
 		</div>
 	</div>
 </body>

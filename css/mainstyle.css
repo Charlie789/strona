@@ -116,3 +116,15 @@ img {
   top: 60%;
   right: 25%;
 }
+
+.feet1 {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+}
+
+.feet2 {
+  position: absolute;
+  top: 40%;
+  right: 20%;
+}
