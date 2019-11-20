@@ -30,7 +30,7 @@ echo
 		<a href="/zadanie4/symulator_data.php" title="Symulator danych data center">Symulator danych data center</a>
 		<a href="/zadanie4/plan_data.php" title="Plan Data Center">Plan Data Center</a>
 	</div>
-	<button type="button" class="collapsible">Zadanie 4</button>
+	<button type="button" class="collapsible">Zadanie 5</button>
 	<div class="collapse_content">
 		<a href="/zadanie5/index.php" title="SQL Injection">SQL Injection</a>
 	</div>

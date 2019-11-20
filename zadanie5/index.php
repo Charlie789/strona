@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Appel</title>
-	<link href="css/mainstyle.css" rel="stylesheet" type="text/css" />
+	<link href="/css/mainstyle.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
