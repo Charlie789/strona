@@ -33,6 +33,7 @@ echo
 	<button type="button" class="collapsible">Zadanie 5</button>
 	<div class="collapse_content">
 		<a href="/zadanie5/index.php" title="SQL Injection">SQL Injection</a>
+		<a href="/zadanie5/login_v2.php" title="SQL Injection v2">SQL Injection v2</a>
 	</div>
 </div>
 
