@@ -8,11 +8,11 @@
     $user=$_POST['user']; // login z formularza
     $pass=$_POST['pass']; // hasło z formularza 
     if($result = $mysqli->query("SELECT * FROM users WHERE (username='$user') and (password='$pass')")) { 
-        echo "Logowanie Ok. "; // Jeśli $rekord istnieje
-    }
-    else
-    {
-        echo "Blad nazwy użytkownika lub hasla";
+        if($row = $result->fetch_assoc()){
+            echo "Logowanie Ok. "; // Jeśli $rekord istnieje
+        } else {
+            echo "Blad nazwy użytkownika lub hasla";
+        }
     }
     $result->close();
 ?>
