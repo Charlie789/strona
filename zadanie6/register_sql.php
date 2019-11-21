@@ -10,21 +10,12 @@
     $pass2=$_POST['pass2']; // powtórzone hasło z formularza 
     if($pass != $pass2){
         echo "podane hasło nie są takie same";
-    } else if($result = $mysqli->query("SELECT * FROM klienci WHERE nazwisko='$user'")) { 
-        if($row = $result->fetch_assoc()){
-            if($row['haslo']==$pass){
-                echo "Logowanie Ok. "; // Jeśli $rekord istnieje
-            } else {
-                echo "błędne hasło";
-            }
+    } else {
+        if($mysqli->query("INSERT INTO `klienci`(`nazwisko`, `haslo`) VALUES ('$user', '$pass')") === TRUE) {
+            echo "dodano do bazy danych";
         } else {
-            if($mysqli->query("INSERT INTO `klienci`(`nazwisko`, `haslo`) VALUES ('$user', '$pass')") === TRUE) {
-                echo "dodano do bazy danych";
-            } else {
-                echo "Error: " . $mysqli->error;
-            }
+            echo "Error: " . $mysqli->error;
         }
-        $result->close();
     }
 ?>
 </BODY>
