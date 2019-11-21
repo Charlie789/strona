@@ -20,9 +20,6 @@
 			<input type="submit" value="Send"/>
 		</form>
 	</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.js"></script>
-    <script src="/js/password_check.js"></script>
 
 </body>
 
