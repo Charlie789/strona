@@ -10,7 +10,7 @@
     if($result = $mysqli->query("SELECT * FROM klienci WHERE nazwisko='$user'")) { 
         if($row = $result->fetch_assoc()){
             if($row['haslo']==$pass){
-                header("Location: panel_klient.php"); // Jeśli $rekord istnieje
+                echo '<script type="text/javascript">location.href = "panel_klient.php"</script>'; // Jeśli $rekord istnieje
             } else {
                 echo "błędne hasło";
             }
