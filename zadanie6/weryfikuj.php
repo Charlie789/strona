@@ -18,7 +18,7 @@
             $result2 = $mysqli->query("SELECT * FROM pracownicy WHERE nazwisko='$user'");
             if($row2 = $result2->fetch_assoc()){
                 if($row2['haslo']==$pass){
-                    header("Location: panel_pracownik.php"); // Jeśli $rekord istnieje
+                    echo '<script type="text/javascript">location.href = "panel_pracownik.php"</script>'; // Jeśli $rekord istnieje
                 } else {
                     echo "błędne hasło";
                 }
