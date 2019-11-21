@@ -35,6 +35,9 @@ echo
 		<a href="/zadanie5/index.php" title="SQL Injection">SQL Injection</a>
 		<a href="/zadanie5/login_v2.php" title="SQL Injection v2">SQL Injection v2</a>
 	</div>
+	<div class="collapse_content">
+		<a href="/zadanie6/login.php" title="Logowanie do telefonii">Logowanie do telefonii</a>
+	</div>
 </div>
 
 <script src="/js/collapse.js"></script>';
