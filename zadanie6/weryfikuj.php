@@ -11,7 +11,7 @@
         if($row = $result->fetch_assoc()){
             if($row['haslo']==$pass){
                 $user_id = $row['id_klienci'];
-                $mysqli->query("INSERT INTO `logi_klientow`(`id_klient`, `datagodzina`, `przegladarka`, `system`) VALUES ('$user_id', NOW(), 'Firefox', 'windows10')") === TRUE;
+                $mysqli->query("INSERT INTO `logi_klientow`(`id_klient`, `datagodzina`, `przegladarka`, `system`) VALUES ('$user_id', NOW(), get_browser(), 'windows10')") === TRUE;
                 echo '<script type="text/javascript">location.href = "panel_klient.php"</script>'; // Jeśli $rekord istnieje
             } else {
                 echo "błędne hasło";
