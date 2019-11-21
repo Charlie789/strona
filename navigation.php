@@ -37,6 +37,7 @@ echo
 	</div>
 	<button type="button" class="collapsible">Zadanie 6</button>
 	<div class="collapse_content">
+		<a href="/zadanie6/register_page.php" title="Rejestracja klienta">Rejestracja klienta</a>
 		<a href="/zadanie6/login.php" title="Logowanie do telefonii">Logowanie do telefonii</a>
 	</div>
 </div>
