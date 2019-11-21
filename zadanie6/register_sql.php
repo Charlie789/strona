@@ -24,8 +24,8 @@
                 echo "Error: " . $mysqli->error;
             }
         }
+        $result->close();
     }
-    $result->close();
 ?>
 </BODY>
 </HTML>
