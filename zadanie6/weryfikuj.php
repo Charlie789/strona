@@ -12,7 +12,7 @@
             if($row['haslo']==$pass){
                 $user_id = $row['id_klienci'];
                 echo $_SERVER['HTTP_USER_AGENT'];
-                $browser = get_browser();
+                $browser = get_browser(null, true);
                 $browser_info = $browser['parent'];
                 $system_info = $browser['platform'];
                 $mysqli->query("INSERT INTO `logi_klientow`(`id_klient`, `datagodzina`, `przegladarka`, `system`) VALUES ('$user_id', NOW(), '$browser_info', '$system_info')") === TRUE;
