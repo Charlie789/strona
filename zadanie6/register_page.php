@@ -12,7 +12,7 @@
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php'); ?>
 
 	<div class="content">
-		Logowanie
+		Rejestracja klienta
 		<form id="register_form" method="post" action="register_sql.php">
 			Login:<input type="text" name="user" maxlength="20" size="20"><br>
 			Hasło:<input type="password" name="pass" maxlength="20" size="20"><br>

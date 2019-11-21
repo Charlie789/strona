@@ -10,7 +10,7 @@
     if($result = $mysqli->query("SELECT * FROM klienci WHERE nazwisko='$user'")) { 
         if($row = $result->fetch_assoc()){
             if($row['haslo']==$pass){
-                echo "Logowanie Ok. "; // Jeśli $rekord istnieje
+                header("Location: panel_klient.php"); // Jeśli $rekord istnieje
             } else {
                 echo "błędne hasło";
             }
@@ -18,7 +18,7 @@
             $result2 = $mysqli->query("SELECT * FROM pracownicy WHERE nazwisko='$user'");
             if($row2 = $result2->fetch_assoc()){
                 if($row2['haslo']==$pass){
-                    echo "Logowanie Ok. "; // Jeśli $rekord istnieje
+                    header("Location: panel_pracownik.php"); // Jeśli $rekord istnieje
                 } else {
                     echo "błędne hasło";
                 }
