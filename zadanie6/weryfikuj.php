@@ -10,7 +10,8 @@
     if($result = $mysqli->query("SELECT * FROM klienci WHERE nazwisko='$user'")) { 
         if($row = $result->fetch_assoc()){
             if($row['haslo']==$pass){
-                $mysqli->query("INSERT INTO `logi_klientow`(`id_klient`, `datagodzina`, `przegladarka`, `system`) VALUES ('$row['id_klienci'], NOW(), 'Firefox', 'windows10')") === TRUE;
+                $user_id = $row['id_klienci'];
+                $mysqli->query("INSERT INTO `logi_klientow`(`id_klient`, `datagodzina`, `przegladarka`, `system`) VALUES ('$user_id', NOW(), 'Firefox', 'windows10')") === TRUE;
                 echo '<script type="text/javascript">location.href = "panel_klient.php"</script>'; // Jeśli $rekord istnieje
             } else {
                 echo "błędne hasło";
@@ -19,7 +20,8 @@
             $result2 = $mysqli->query("SELECT * FROM pracownicy WHERE nazwisko='$user'");
             if($row2 = $result2->fetch_assoc()){
                 if($row2['haslo']==$pass){
-                    $mysqli->query("INSERT INTO `logi_pracownikow`(`id_pracownicy`, `datagodzina`) VALUES ('$row2['id_pracownicy'], NOW())") === TRUE;
+                    $worker_id = $row2['id_pracownicy'];
+                    $mysqli->query("INSERT INTO `logi_pracownikow`(`id_pracownicy`, `datagodzina`) VALUES ('$worker_id', NOW())") === TRUE;
                     echo '<script type="text/javascript">location.href = "panel_pracownik.php"</script>'; // Jeśli $rekord istnieje
                 } else {
                     echo "błędne hasło";
