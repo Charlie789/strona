@@ -13,13 +13,16 @@
 
 	<div class="content">
 		Logowanie
-		<form method="post" action="register_sql.php">
+		<form id="register_form" method="post" action="register_sql.php">
 			Login:<input type="text" name="user" maxlength="20" size="20"><br>
 			Hasło:<input type="password" name="pass" maxlength="20" size="20"><br>
 			Powtórz hasło:<input type="password" name="pass2" maxlength="20" size="20"><br>
 			<input type="submit" value="Send"/>
 		</form>
 	</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.js"></script>
+    <script src="/js/password_check.js"></script>
 
 </body>
 
