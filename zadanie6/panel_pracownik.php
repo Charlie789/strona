@@ -9,7 +9,10 @@
 
 <body>
 
-	<?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php'); ?>
+	<?php
+		include($_SERVER['DOCUMENT_ROOT'].'/navigation.php');
+		include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
+	?>
 
 	<div class="content">
 		Panel pracownika
