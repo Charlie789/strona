@@ -42,6 +42,18 @@
 					print "<tr><td width='70%'>$pracownik</td><td width='30%'>$suma_odpowiedzi</td></tr>";
 				}
 			}
+			echo "</table><br><br>";
+			$result->close();
+			echo "Ilość odpowiedzi udzielonych na dany temat<br>";
+			echo "<table border='1' width='40%'>";
+			echo "<tr><td width='70%'>Temat</td><td width='30%'>Ilość odpowiedzi</td></tr>";
+			if ($result = $mysqli->query("SELECT z.temat AS temat, COUNT(p.post_pracownika) AS suma FROM zagadnienia AS z LEFT JOIN posty AS p ON z.id_zagadnienia = p.id_zagadnienie  GROUP BY p.id_zagadnienie;")) {
+				while($row = $result->fetch_assoc()) {
+					$temat = $row["temat"];
+					$suma_odpowiedzi = $row["suma"];
+					print "<tr><td width='70%'>$temat</td><td width='30%'>$suma_odpowiedzi</td></tr>";
+				}
+			}
 			echo "</table>";
 			$result->close();
 			
