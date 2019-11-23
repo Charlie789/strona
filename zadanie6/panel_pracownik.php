@@ -22,11 +22,11 @@
 		<div style="height:400px;overflow:auto;">
 			<table border='1' width='95%'>
 			<?php
-			if ($result = $mysqli->query("select p.id_posty, kl.nazwisko, p.post_klienta, pr.nazwisko, p.post_pracownika, p.ocena from posty as p left join pracownicy as pr on p.id_pracownik = pr.id_pracownicy LEFT JOIN klienci as kl on p.id_klient = kl.id_klienci WHERE p.id_zagadnienie=2")) {
+			if ($result = $mysqli->query("select p.id_posty, kl.nazwisko as nazwisko_klienta, p.post_klienta, pr.nazwisko as nazwisko_pracownika, p.post_pracownika, p.ocena from posty as p left join pracownicy as pr on p.id_pracownik = pr.id_pracownicy LEFT JOIN klienci as kl on p.id_klient = kl.id_klienci WHERE p.id_zagadnienie=2")) {
 				while($row = $result->fetch_assoc()) {
 					$id_post = $row["id_posty"];
-					$nazwisko_pracownika = $row["pr.nazwisko"];
-					$nazwisko_klienta = $row["kl.nazwisko"];
+					$nazwisko_pracownika = $row["nazwisko_pracownika"];
+					$nazwisko_klienta = $row["nazwisko_klienta"];
 					$post_klienta = $row["post_klienta"];
 					$post_pracownika = $row["post_pracownika"];
 					$ocena = $row["ocena"];
