@@ -20,7 +20,7 @@
 		Panel klienta
 			
 		<?php
-			$user=readCookie('user');
+			echo '<script type="text/javascript">$user=readCookie(\'user\')</script>';
 			$zagadnienie=$_POST['selected_text'];
 			$tresc=$_POST['tresc'];
 			if($mysqli->query("INSERT INTO `posty`(`id_klient`, `id_zagadnienie`, `datagodzina`, `post_klienta`) VALUES ('$user', '$zagadnienie', NOW(), '$tresc')") === TRUE) {
