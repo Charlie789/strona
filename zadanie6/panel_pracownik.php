@@ -12,7 +12,12 @@
 	<?php
 		include($_SERVER['DOCUMENT_ROOT'].'/navigation.php');
 		include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
-		$zagadnienie;
+		$selected_zagadnienie=$_POST['selected_zagadnienie'];
+		if(!$selected_zagadnienie){
+			$zagadnienie='1';
+		} else {
+			$zagadnienie = $selected_zagadnienie;
+		}
 	?>
 
 	<div class="content">
@@ -20,9 +25,8 @@
 		<br><br>
 		Wybierz kategorię
 		<br>
-		<form id="zagadnienia_form">
-		<select id="zagadnienie_select" name="zaganienie" onchange="$zagadnienie=this.options[this.selectedIndex].value"></select>
-		
+		<form id="zagadnienia_form" method="POST" action="panel_pracownik.php">
+		<select id="zagadnienie_select" name="zagadnienie" onchange="document.getElementById('selected_zagadnienie').value=this.options[this.selectedIndex].value">		
 		<?php
 			if ($result = $mysqli->query("select * from zagadnienia")) {
 				while($row = $result->fetch_assoc()) {
@@ -33,21 +37,15 @@
 			}
 		?>
 		</select><br>
+		<input type="hidden" name="selected_zagadnienie" id="selected_zagadnienie" value="1" />
+		<input type="submit" name="send" value="Zatwierdź zagadnienie"/>
 		</form>
 		Posty klientów:
-
-		// echo '<select id="ocena_select" name="ocena" onchange="document.getElementById(\'wybrana_ocena\').value=this.options[this.selectedIndex].value">';
-		// 	print "<option value='1'>1</option>";
-		// 	print "<option value='2'>2</option>";
-		// 	print "<option value='3'>3</option>";
-		// 	print "<option value='4'>4</option>";
-		// 	print "<option value='5'>5</option>";
-		// echo '</select>';
 		<br><br>
 		<div style="height:400px;overflow:auto;">
 			<table border='1' width='95%'>
 			<?php
-			if ($result = $mysqli->query("select p.id_posty, kl.nazwisko as nazwisko_klienta, p.post_klienta, pr.nazwisko as nazwisko_pracownika, p.post_pracownika, p.ocena from posty as p left join pracownicy as pr on p.id_pracownik = pr.id_pracownicy LEFT JOIN klienci as kl on p.id_klient = kl.id_klienci WHERE p.id_zagadnienie=2")) {
+			if ($result = $mysqli->query("select p.id_posty, kl.nazwisko as nazwisko_klienta, p.post_klienta, pr.nazwisko as nazwisko_pracownika, p.post_pracownika, p.ocena from posty as p left join pracownicy as pr on p.id_pracownik = pr.id_pracownicy LEFT JOIN klienci as kl on p.id_klient = kl.id_klienci WHERE p.id_zagadnienie=$zagadnienie")) {
 				while($row = $result->fetch_assoc()) {
 					$id_post = $row["id_posty"];
 					$nazwisko_pracownika = $row["nazwisko_pracownika"];
