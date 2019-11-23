@@ -8,6 +8,7 @@
 </head>
 
 <body>
+	<script src="/js/cookie.js"></script>
 
 	<?php 
 		include($_SERVER['DOCUMENT_ROOT'].'/navigation.php');
@@ -19,9 +20,14 @@
 		Panel klienta
 			
 		<?php
+			$user=readCookie('user');
 			$zagadnienie=$_POST['selected_text'];
 			$tresc=$_POST['tresc'];
-			echo "$zagadnienie,  $tresc";
+			if($mysqli->query("INSERT INTO `posty`(`id_klient`, `id_zagadnienie`, `datagodzina`, `post_klienta`) VALUES ('$user', '$zagadnienie', NOW(), '$tresc')") === TRUE) {
+				echo "Przyjęto zgłoszenie";
+			} else {
+				echo "Error: " . $mysqli->error;
+			}
 		?>
 	</div>
 

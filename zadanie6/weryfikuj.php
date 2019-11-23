@@ -3,6 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </HEAD>
 <BODY>
+<script src="/js/cookie.js"></script>
 <?php
     include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
     $user=$_POST['user']; // login z formularza
@@ -11,6 +12,7 @@
         if($row = $result->fetch_assoc()){
             if($row['haslo']==$pass){
                 $user_id = $row['id_klienci'];
+                createCookie('user', $user_id);
                 echo $_SERVER['HTTP_USER_AGENT'];
                 $browser = get_browser(null, true);
                 $browser_info = $browser['parent'];
@@ -25,6 +27,7 @@
             if($row2 = $result2->fetch_assoc()){
                 if($row2['haslo']==$pass){
                     $worker_id = $row2['id_pracownicy'];
+                    createCookie('user', $worker_id);
                     $mysqli->query("INSERT INTO `logi_pracownikow`(`id_pracownicy`, `datagodzina`) VALUES ('$worker_id', NOW())") === TRUE;
                     echo '<script type="text/javascript">location.href = "panel_pracownik.php"</script>'; // Jeśli $rekord istnieje
                 } else {
