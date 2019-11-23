@@ -20,10 +20,10 @@
 		Panel klienta
 			
 		<?php
-			echo '<script type="text/javascript">$user=readCookie(\'user\')</script>';
+			$user_id=$_COOKIE['user_id'];
 			$zagadnienie=$_POST['selected_text'];
 			$tresc=$_POST['tresc'];
-			if($mysqli->query("INSERT INTO `posty`(`id_klient`, `id_zagadnienie`, `datagodzina`, `post_klienta`) VALUES ('$user', '$zagadnienie', NOW(), '$tresc')") === TRUE) {
+			if($mysqli->query("INSERT INTO `posty`(`id_klient`, `id_zagadnienie`, `datagodzina`, `post_klienta`) VALUES ('$user_id', '$zagadnienie', NOW(), '$tresc')") === TRUE) {
 				echo "Przyjęto zgłoszenie";
 			} else {
 				echo "Error: " . $mysqli->error;
