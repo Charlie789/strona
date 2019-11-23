@@ -47,9 +47,13 @@
 					$post_klienta = $row["post_klienta"];
 					$post_pracownika = $row["post_pracownika"];
 					$ocena = $row["ocena"];
-
+					if(!$post_pracownika){
+						$post_pracownika="Nie udzielono jeszcze odpowiedzi";
+						$nazwisko="-";
+					}
+					if($ocena=="0") $ocena="brak oceny";
 					print "
-							<tr><td width='40%'>$post_klienta</td><td width='40%'>$post_pracownika</td><td width='15%'>$nazwisko</td><td width='5%'>$ocena</td></tr>";
+							<tr><td width='40%'>$post_klienta</td><td width='40%'>$post_pracownika</td><td width='10%'>$nazwisko</td><td width='10%'>$ocena</td></tr>";
 				}
 				print "</table>";
 				$result->close();
