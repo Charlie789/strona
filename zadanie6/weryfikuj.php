@@ -18,7 +18,7 @@
                 $browser_info = $browser['parent'];
                 $system_info = $browser['platform'];
                 $mysqli->query("INSERT INTO `logi_klientow`(`id_klient`, `datagodzina`, `przegladarka`, `system`) VALUES ('$user_id', NOW(), '$browser_info', '$system_info')") === TRUE;
-                echo '<script type="text/javascript">location.href = "panel_klient.php"</script>'; // Jeśli $rekord istnieje
+                echo '<script type="text/javascript">location.href = "panel_klient.php"</script>';
             } else {
                 echo "błędne hasło";
             }
@@ -29,7 +29,7 @@
                     $worker_id = $row2['id_pracownicy'];
                     echo '<script type="text/javascript">createCookie(\'worker_id\', \'',$worker_id,'\');</script>';
                     $mysqli->query("INSERT INTO `logi_pracownikow`(`id_pracownicy`, `datagodzina`) VALUES ('$worker_id', NOW())") === TRUE;
-                    echo '<script type="text/javascript">location.href = "panel_pracownik.php"</script>'; // Jeśli $rekord istnieje
+                    echo '<script type="text/javascript">location.href = "panel_pracownik.php"</script>';
                 } else {
                     echo "błędne hasło";
                 }
