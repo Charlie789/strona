@@ -8,6 +8,9 @@
     $user=$_POST['user']; // login z formularza
     $pass=$_POST['pass']; // hasło z formularza
     $pass2=$_POST['pass2']; // powtórzone hasło z formularza 
+    if($user == "admin"){
+        echo "Zabroniona nazwa użytkownika!";
+    }
     if($pass != $pass2){
         echo "podane hasło nie są takie same";
     } else {
