@@ -41,7 +41,7 @@
 		<div style="height:400px;overflow:auto;">
 			<table border='1' width='95%'>
 			<?php
-			if ($result = $mysqli->query("select pr.nazwisko, p.post_klienta, p.post_pracownika, p.ocena from posty as p inner join pracownicy as pr on p.id_pracownik = pr.id_pracownicy")) {
+			if ($result = $mysqli->query("select pr.nazwisko, p.post_klienta, p.post_pracownika, p.ocena from posty as p left join pracownicy as pr on p.id_pracownik = pr.id_pracownicy")) {
 				while($row = $result->fetch_assoc()) {
 					$nazwisko = $row["nazwisko"];
 					$post_klienta = $row["post_klienta"];
