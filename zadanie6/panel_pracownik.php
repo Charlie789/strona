@@ -12,12 +12,37 @@
 	<?php
 		include($_SERVER['DOCUMENT_ROOT'].'/navigation.php');
 		include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
+		$zagadnienie;
 	?>
 
 	<div class="content">
 		Panel pracownika
+		<br><br>
+		Wybierz kategorię
 		<br>
+		<form id="zagadnienia_form">
+		<select id="zagadnienie_select" name="zaganienie" onchange="$zagadnienie=this.options[this.selectedIndex].value"></select>
+		
+		<?php
+			if ($result = $mysqli->query("select * from zagadnienia")) {
+				while($row = $result->fetch_assoc()) {
+					$id = $row["id_zagadnienia"];
+					$temat = $row["temat"];
+					print "<option value='$id'>$temat</option>";
+				}
+			}
+		?>
+		</select><br>
+		</form>
 		Posty klientów:
+
+		// echo '<select id="ocena_select" name="ocena" onchange="document.getElementById(\'wybrana_ocena\').value=this.options[this.selectedIndex].value">';
+		// 	print "<option value='1'>1</option>";
+		// 	print "<option value='2'>2</option>";
+		// 	print "<option value='3'>3</option>";
+		// 	print "<option value='4'>4</option>";
+		// 	print "<option value='5'>5</option>";
+		// echo '</select>';
 		<br><br>
 		<div style="height:400px;overflow:auto;">
 			<table border='1' width='95%'>
@@ -37,13 +62,7 @@
 						print '<form id="ocena_form" method="POST" action="odpowiedz.php">';
 						print "<tr><td width='10%'>$nazwisko_klienta</td><td width='35%'>$post_klienta</td><td width='35%'>";
 						print '<textarea name="tresc" cols="60" rows="5"></textarea>';
-						// echo '<select id="ocena_select" name="ocena" onchange="document.getElementById(\'wybrana_ocena\').value=this.options[this.selectedIndex].value">';
-						// 	print "<option value='1'>1</option>";
-						// 	print "<option value='2'>2</option>";
-						// 	print "<option value='3'>3</option>";
-						// 	print "<option value='4'>4</option>";
-						// 	print "<option value='5'>5</option>";
-						// echo '</select>';
+						
 						echo "<input type=\"hidden\" name=\"id_post\" id=\"id_post\" value=$id_post />";
 						echo '<input type="submit" name="send" value="odpowiedz"/></form>';
 						echo "</td><td width='10%'>$nazwisko_pracownika</td><td width='10%'>$ocena</td></tr>";
