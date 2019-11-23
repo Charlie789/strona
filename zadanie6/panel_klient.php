@@ -19,8 +19,7 @@
 
 		<form id="temat_form" method="POST" action="panel_klient_send.php">
 			<label for="zgloszenie"> Zgloszenie : </label>
-			<select id="temat_select" name="temat"     
-onchange="document.getElementById('selected_text').value=this.options[this.selectedIndex].value">
+			<select id="temat_select" name="temat" onchange="document.getElementById('selected_text').value=this.options[this.selectedIndex].value">
 				<?php
 					if ($result = $mysqli->query("SELECT * FROM zagadnienia")) {
 						while($row = $result->fetch_assoc()) {
@@ -33,7 +32,7 @@ onchange="document.getElementById('selected_text').value=this.options[this.selec
 				?>
 			</select><br>
 			<textarea name="tresc" cols="40" rows="5"></textarea>
-			<input type="hidden" name="selected_text" id="selected_text" value="" />
+			<input type="hidden" name="selected_text" id="selected_text" value="1" />
 			<input type="submit" name="send" value="Send"/>
 		</form>
 	</div>
