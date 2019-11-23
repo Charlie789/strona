@@ -28,14 +28,15 @@
 			if ($result = $mysqli->query("SELECT COUNT(*) AS suma FROM posty WHERE post_pracownika IS NOT NULL")) {
 				if($row = $result->fetch_assoc()) {
 					$suma_odpowiedzi = $row["suma"];
-					print "Ilość udzielonych odpowiedzi: $suma_odpowiedzi";
+					print "Ilość udzielonych odpowiedzi: $suma_odpowiedzi<br>";
 				}
 			}
 			$result->close();
+			echo "Ilość odpowiedzi udzielonych przez poszczególnych pracowników<br>";
 			echo "<table border='1' width='40%'>";
 			echo "<tr><td width='70%'>Nazwisko</td><td width='30%'>Ilość odpowiedzi</td></tr>";
 			if ($result = $mysqli->query("SELECT p.nazwisko as nazwisko, count(po.id_posty) as suma FROM pracownicy AS p LEFT JOIN posty AS po ON p.id_pracownicy = po.id_pracownik GROUP BY nazwisko")) {
-				if($row = $result->fetch_assoc()) {
+				while($row = $result->fetch_assoc()) {
 					$pracownik = $row["nazwisko"];
 					$suma_odpowiedzi = $row["suma"];
 					print "<tr><td width='70%'>$pracownik</td><td width='30%'>$suma_odpowiedzi</td></tr>";
