@@ -20,8 +20,8 @@
 			
 		<?php
 			$zagadnienie=$_POST['selected_text'];
-			$text=$_POST['tresc'];
-			echo "$zagadnienie,  $text";
+			$tresc=$_POST['tresc'];
+			echo "$zagadnienie,  $tresc";
 		?>
 	</div>
 
