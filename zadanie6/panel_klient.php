@@ -52,7 +52,7 @@
 						$post_pracownika="Nie udzielono jeszcze odpowiedzi";
 						$nazwisko="-";
 					}
-					if($ocena=="0") {
+					if(!$ocena) {
 						print '<form id="ocena_form" method="POST" action="ocen.php">';
 						print "<tr><td width='40%'>$post_klienta</td><td width='40%'>$post_pracownika</td><td width='10%'>$nazwisko</td><td width='10%'>";
 						echo '<select id="ocena_select" name="ocena" onchange="document.getElementById(\'wybrana_ocena\').value=this.options[this.selectedIndex].value">';

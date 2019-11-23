@@ -61,7 +61,7 @@
 					$post_klienta = $row["post_klienta"];
 					$post_pracownika = $row["post_pracownika"];
 					$ocena = $row["ocena"];
-					if($ocena=="0") {
+					if(!$ocena) {
 						$ocena = "Brak oceny";
 					}
 					if(!$post_pracownika){
