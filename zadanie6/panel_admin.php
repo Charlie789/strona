@@ -21,9 +21,17 @@
 			if ($result = $mysqli->query("SELECT COUNT(*) AS suma FROM posty")) {
 				if($row = $result->fetch_assoc()) {
 					$suma_postow = $row["suma"];
-					print "Ilość zapytań wygenerowanych przez klienta:	$suma_postow";
+					print "Ilość zapytań wygenerowanych przez klienta: $suma_postow";
 				}
 			}
+			$result->close();
+			if ($result = $mysqli->query("SELECT COUNT(*) AS suma FROM posty WHERE post_pracownika IS NOT NULL")) {
+				if($row = $result->fetch_assoc()) {
+					$suma_odpowiedzi = $row["suma"];
+					print "Ilość udzielonych odpowiedzi: $suma_odpowiedzi";
+				}
+			}
+			$result->close();
 		?>
 	</div>
 
