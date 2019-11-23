@@ -30,10 +30,13 @@
 					$post_klienta = $row["post_klienta"];
 					$post_pracownika = $row["post_pracownika"];
 					$ocena = $row["ocena"];
+					if($ocena=="0") {
+						$ocena = "Brak oceny";
+					}
 					if(!$post_pracownika){
-						print '<form id="ocena_form" method="POST" action="ocen.php">';
+						print '<form id="ocena_form" method="POST" action="odpowiedz.php">';
 						print "<tr><td width='10%'>$nazwisko_klienta</td><td width='35%'>$post_klienta</td><td width='35%'>";
-						print '<textarea name="tresc" cols="20" rows="5"></textarea>';
+						print '<textarea name="tresc" cols="60" rows="5"></textarea>';
 						// echo '<select id="ocena_select" name="ocena" onchange="document.getElementById(\'wybrana_ocena\').value=this.options[this.selectedIndex].value">';
 						// 	print "<option value='1'>1</option>";
 						// 	print "<option value='2'>2</option>";
@@ -47,9 +50,6 @@
 					} else {
 						print "<tr><td width='10%'>$nazwisko_klienta</td><td width='35%'>$post_klienta</td><td width='35%'>$post_pracownika</td><td width='10%'>$nazwisko_pracownika</td><td width='10%'>$ocena</td></tr>";
 					}
-				}
-				if($ocena=="0") {
-					echo "brak oceny";
 				}
 				$result->close();
 			}
