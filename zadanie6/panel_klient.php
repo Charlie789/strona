@@ -35,6 +35,27 @@
 			<input type="hidden" name="selected_text" id="selected_text" value="1" />
 			<input type="submit" name="send" value="Send"/>
 		</form>
+
+		Posty:
+		<br><br>
+		<div style="height:400px;overflow:auto;">
+			<table border='1' width='95%'>
+			<?php
+			if ($result = $mysqli->query("select pr.nazwisko, p.post_klienta, p.post_pracownika, p.ocena from posty as p inner join pracownicy as pr on p.id_pracownik = pr.id_pracownicy")) {
+				while($row = $result->fetch_assoc()) {
+					$nazwisko = $row["nazwisko"];
+					$post_klienta = $row["post_klienta"];
+					$post_pracownika = $row["post_pracownika"];
+					$ocena = $row["ocena"];
+
+					print "
+							<tr><td width='40%'>$post_klienta</td><td width='40%'>$post_pracownika</td><td width='15%'>$nazwisko</td><td width='5%'>$ocena</td></tr>";
+				}
+				print "</table>";
+				$result->close();
+			}
+			?>
+		</div>
 	</div>
 
 </body>
