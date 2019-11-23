@@ -61,10 +61,11 @@
 							print "<option value='3'>3</option>";
 							print "<option value='4'>4</option>";
 							print "<option value='5'>5</option>";
-						echo '</select></td></tr>';
+						echo '</select>';
 						echo '<input type="hidden" name="wybrana_ocena" id="wybrana_ocena" value="0" />';
 						echo "<input type=\"hidden\" name=\"id_post\" id=\"id_post\" value=$id_post />";
 						echo '<input type="submit" name="send" value="oceń"/></form>';
+						echo '</td></tr>';
 					} else {
 						print "<tr><td width='40%'>$post_klienta</td><td width='40%'>$post_pracownika</td><td width='10%'>$nazwisko</td><td width='10%'>$ocena</td></tr>";
 					}
