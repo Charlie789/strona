@@ -41,8 +41,9 @@
 		<div style="height:400px;overflow:auto;">
 			<table border='1' width='95%'>
 			<?php
-			if ($result = $mysqli->query("select pr.nazwisko, p.post_klienta, p.post_pracownika, p.ocena from posty as p left join pracownicy as pr on p.id_pracownik = pr.id_pracownicy")) {
+			if ($result = $mysqli->query("select p.id_posty, pr.nazwisko, p.post_klienta, p.post_pracownika, p.ocena from posty as p left join pracownicy as pr on p.id_pracownik = pr.id_pracownicy")) {
 				while($row = $result->fetch_assoc()) {
+					$id_post = $row["id_posty"];
 					$nazwisko = $row["nazwisko"];
 					$post_klienta = $row["post_klienta"];
 					$post_pracownika = $row["post_pracownika"];
@@ -51,7 +52,20 @@
 						$post_pracownika="Nie udzielono jeszcze odpowiedzi";
 						$nazwisko="-";
 					}
-					if($ocena=="0") $ocena="brak oceny";
+					if($ocena=="0") {
+						print '<form id="ocena_form" method="POST" action="ocen.php">';
+						print "<tr><td width='40%'>$post_klienta</td><td width='40%'>$post_pracownika</td><td width='10%'>$nazwisko</td><td width='10%'>";
+						echo '<select id="ocena_select" name="ocena" onchange="document.getElementById(\'wybrana_ocena\').value=this.options[this.selectedIndex].value">';
+							print "<option value='1'>1</option>";
+							print "<option value='2'>2</option>";
+							print "<option value='3'>3</option>";
+							print "<option value='4'>4</option>";
+							print "<option value='5'>5</option>";
+						echo '</select></td></tr>';
+						echo '<input type="hidden" name="wybrana_ocena" id="wybrana_ocena" value="0" />';
+						echo "<input type=\"hidden\" name=\"id_post\" id=\"id_post\" value=$id_post />";
+						echo '<input type="submit" name="send" value="oceń"/></form>';
+					}
 					print "
 							<tr><td width='40%'>$post_klienta</td><td width='40%'>$post_pracownika</td><td width='10%'>$nazwisko</td><td width='10%'>$ocena</td></tr>";
 				}
