@@ -54,7 +54,7 @@
 					}
 					if($ocena=="0") {
 						print '<form id="ocena_form" method="POST" action="ocen.php">';
-						print "<tr><td width='40%'>$post_klienta</td><td width='40%'>$post_pracownika</td><td width='10%'>$nazwisko</td><td width='10%'>";
+						print "<tr><td width='40%'>$post_klienta</td><td width='35%'>$post_pracownika</td><td width='10%'>$nazwisko</td><td width='15%'>";
 						echo '<select id="ocena_select" name="ocena" onchange="document.getElementById(\'wybrana_ocena\').value=this.options[this.selectedIndex].value">';
 							print "<option value='1'>1</option>";
 							print "<option value='2'>2</option>";
@@ -65,9 +65,9 @@
 						echo '<input type="hidden" name="wybrana_ocena" id="wybrana_ocena" value="0" />';
 						echo "<input type=\"hidden\" name=\"id_post\" id=\"id_post\" value=$id_post />";
 						echo '<input type="submit" name="send" value="oceń"/></form>';
+					} else {
+						print "<tr><td width='40%'>$post_klienta</td><td width='40%'>$post_pracownika</td><td width='10%'>$nazwisko</td><td width='10%'>$ocena</td></tr>";
 					}
-					print "
-							<tr><td width='40%'>$post_klienta</td><td width='40%'>$post_pracownika</td><td width='10%'>$nazwisko</td><td width='10%'>$ocena</td></tr>";
 				}
 				print "</table>";
 				$result->close();
