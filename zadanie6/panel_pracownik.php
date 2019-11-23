@@ -50,6 +50,7 @@
 		<br><br>
 		<div style="height:400px;overflow:auto;">
 			<table border='1' width='95%'>
+			<tr><td width='10%'>Nazwisko klienta</td><td width='35%'>Post klienta</td><td width='35%'>Post pracownika</td><td width='10%'>Nazwisko pracownika</td><td width='10%'>Ocena</td></tr>
 			<?php
 			$is_any_post='0';
 			if ($result = $mysqli->query("select p.id_posty, kl.nazwisko as nazwisko_klienta, p.post_klienta, pr.nazwisko as nazwisko_pracownika, p.post_pracownika, p.ocena from posty as p left join pracownicy as pr on p.id_pracownik = pr.id_pracownicy LEFT JOIN klienci as kl on p.id_klient = kl.id_klienci WHERE p.id_zagadnienie=$zagadnienie")) {

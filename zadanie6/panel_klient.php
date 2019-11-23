@@ -40,6 +40,7 @@
 		<br><br>
 		<div style="height:400px;overflow:auto;">
 			<table border='1' width='95%'>
+			<tr><td width='40%'>Post klienta</td><td width='40%'>Post pracownika</td><td width='10%'>Nazwisko pracownika</td><td width='10%'>Ocena</td></tr>
 			<?php
 			if ($result = $mysqli->query("select p.id_posty, pr.nazwisko, p.post_klienta, p.post_pracownika, p.ocena from posty as p left join pracownicy as pr on p.id_pracownik = pr.id_pracownicy")) {
 				while($row = $result->fetch_assoc()) {
