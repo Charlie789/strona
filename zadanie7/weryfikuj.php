@@ -8,7 +8,7 @@
     include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
     $user=$_POST['user']; // login z formularza
     $pass=$_POST['pass']; // hasło z formularza 
-    if($result = $mysqli->query("SELECT * FROM klienci WHERE nazwisko='$user'")) { 
+    if($result = $mysqli->query("SELECT * FROM users WHERE username='$user'")) { 
         if($row = $result->fetch_assoc()){
             $user_id = $row['id_klienci'];
             if($row['haslo']==$pass){
