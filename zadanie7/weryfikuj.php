@@ -10,13 +10,13 @@
     $pass=$_POST['pass']; // hasło z formularza 
     if($result = $mysqli->query("SELECT * FROM users WHERE username='$user'")) { 
         if($row = $result->fetch_assoc()){
-            $user_id = $row['id_klienci'];
+            $user_id = $row['id'];
             if($row['haslo']==$pass){
                 echo '<script type="text/javascript">createCookie(\'user_id\', \'',$user_id,'\');</script>';
-                $mysqli->query("INSERT INTO `logi_klientow`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '1',  NOW())") === TRUE;
+                $mysqli->query("INSERT INTO `logi`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '1',  NOW())") === TRUE;
                 echo '<script type="text/javascript">location.href = "panel_klient.php"</script>';
             } else {
-                $mysqli->query("INSERT INTO `logi_klientow`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '0',  NOW())") === TRUE;
+                $mysqli->query("INSERT INTO `logi`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '0',  NOW())") === TRUE;
                 echo "błędne hasło";
             }
         } else {
