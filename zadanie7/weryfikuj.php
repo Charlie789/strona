@@ -12,6 +12,7 @@
         if($row = $result->fetch_assoc()){
             $user_id = $row['id'];
             if($row['password']==$pass){
+                echo '<script type="text/javascript">createCookie(\'zad7_user_id\', \'',$user_id,'\');</script>';
                 echo '<script type="text/javascript">createCookie(\'zad7_user\', \'',$user,'\');</script>';
                 $mysqli->query("INSERT INTO `logi`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '1',  NOW())") === TRUE;
                 if($result2 = $mysqli->query("SELECT * FROM `logi` WHERE user_id=$user_id order by history_id DESC LIMIT 1,1")) { 
