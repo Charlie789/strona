@@ -20,6 +20,10 @@
 		<form action="odbierz.php" method="POST" ENCTYPE="multipart/form-data"> 
 			<input type="file" name="plik"/>
 			<input type="submit" value="Wyślij plik"/>
+		</form><br>
+		<form action="mkdir.php" method="POST"> 
+			<input type="text" name="nowy_katalog" maxlength="20" size="20" id="nowy_katalog"/>
+			<input type="submit" value="Wyślij plik"/>
 		</form>
 
 	</div>
