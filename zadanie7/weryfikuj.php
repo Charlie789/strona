@@ -14,7 +14,18 @@
             if($row['password']==$pass){
                 echo '<script type="text/javascript">createCookie(\'zad7_user\', \'',$user,'\');</script>';
                 $mysqli->query("INSERT INTO `logi`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '1',  NOW())") === TRUE;
-                echo '<script type="text/javascript">location.href = "panel_klient.php"</script>';
+                if($result2 = $mysqli->query("SELECT * FROM `logi` WHERE user_id=1 order by history_id DESC LIMIT 1,1")) { 
+                    if($row2 = $result2->fetch_assoc()){
+                        $correct = $row['correct'];
+                        if ($correct == 1) {
+                            echo '<script type="text/javascript">location.href = "panel_klient.php"</script>';
+                        } else {
+                            echo '<script type="text/javascript">location.href = "login_warning.php"</script>';
+                        }
+                    }
+                }
+                
+                
             } else {
                 $mysqli->query("INSERT INTO `logi`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '0',  NOW())") === TRUE;
                 echo "błędne hasło";
