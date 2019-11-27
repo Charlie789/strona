@@ -16,7 +16,7 @@
                 $mysqli->query("INSERT INTO `logi`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '1',  NOW())") === TRUE;
                 if($result2 = $mysqli->query("SELECT * FROM `logi` WHERE user_id=$user_id order by history_id DESC LIMIT 1,1")) { 
                     if($row2 = $result2->fetch_assoc()){
-                        $correct = $row['correct'];
+                        $correct = $row2['correct'];
                         if ($correct == 1) {
                             echo '<script type="text/javascript">location.href = "panel_klient.php"</script>';
                         } else {
