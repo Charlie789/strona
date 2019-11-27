@@ -23,7 +23,7 @@
 		</form><br>
 		<form action="mkdir.php" method="POST"> 
 			<input type="text" name="nowy_katalog" maxlength="20" size="20" id="nowy_katalog"/>
-			<input type="submit" value="Wyślij plik"/>
+			<input type="submit" value="Dodaj podfolder"/>
 		</form>
 
 	</div>

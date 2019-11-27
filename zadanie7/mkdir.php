@@ -5,8 +5,8 @@
     $user=$_COOKIE['zad7_user'];
 
     mkdir("/pliki/$user/$nowy_katalog", 0700);
-    echo "Utworzono nowy katalog $nowy_katalog";
-    echo '<button id="powrot" on_click="powrot_do_panelu()">Powrot</button>';
+    echo "Utworzono nowy katalog $nowy_katalog<br>";
+    echo '<button id="powrot" onclick="powrot_do_panelu()">Powrot</button>';
 
     echo '<script>
         function powrot_do_panelu() {
