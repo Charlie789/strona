@@ -4,8 +4,17 @@
 </HEAD>
 <BODY>
 <script src="/js/cookie.js"></script>
-Była nieudane próba logowania na konto<br>
-<button id="powrot" onclick="powrot_do_panelu()">Kontynuuj</button>';
+<?php
+    include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
+    if($result = $mysqli->query("SELECT * FROM `logi` WHERE user_id=$user_id order by history_id DESC LIMIT 1,1")) { 
+        if($row = $result->fetch_assoc()){
+            $data = row['data_czas'];
+        }
+        $result->close();
+        echo "<font color='red'></font>Była nieudane próba logowania na konto $data</font><br>";
+    }
+?>
+<button id="powrot" onclick="powrot_do_panelu()">Kontynuuj</button>
 
     <script>
         function powrot_do_panelu() {
