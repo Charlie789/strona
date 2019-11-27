@@ -40,6 +40,11 @@ echo
 		<a href="/zadanie6/register_page.php" title="Rejestracja klienta">Rejestracja klienta</a>
 		<a href="/zadanie6/login.php" title="Logowanie do telefonii">Logowanie do telefonii</a>
 	</div>
+	<button type="button" class="collapsible">Zadanie 7</button>
+	<div class="collapse_content">
+		<a href="/zadanie7/register_page.php" title="Rejestracja">Rejestracja</a>
+		<a href="/zadanie7/login.php" title="Logowanie">Logowanie</a>
+	</div>
 </div>
 
 <script src="/js/collapse.js"></script>';
