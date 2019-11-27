@@ -13,6 +13,7 @@
     } else {
         if($mysqli->query("INSERT INTO `users`(`username`, `password`) VALUES ('$user', '$pass')") === TRUE) {
             echo "dodano do bazy danych";
+            mkdir("/pliki/$user", 0700);
         } else {
             echo "Error: " . $mysqli->error;
         }
