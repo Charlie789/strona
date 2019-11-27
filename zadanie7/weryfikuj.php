@@ -11,7 +11,7 @@
     if($result = $mysqli->query("SELECT * FROM users WHERE username='$user'")) { 
         if($row = $result->fetch_assoc()){
             $user_id = $row['id'];
-            if($row['haslo']==$pass){
+            if($row['password']==$pass){
                 echo '<script type="text/javascript">createCookie(\'user_id\', \'',$user_id,'\');</script>';
                 $mysqli->query("INSERT INTO `logi`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '1',  NOW())") === TRUE;
                 echo '<script type="text/javascript">location.href = "panel_klient.php"</script>';
