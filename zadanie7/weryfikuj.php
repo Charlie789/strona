@@ -11,6 +11,10 @@
     if($result = $mysqli->query("SELECT * FROM users WHERE username='$user'")) { 
         if($row = $result->fetch_assoc()){
             $user_id = $row['id'];
+	    $attempts = $row['attempts'];
+	    if($attempts > 2) {
+		echo "Przekroczyles limit prób logowania";
+	    } else {
             if($row['password']==$pass){
                 echo '<script type="text/javascript">createCookie(\'zad7_user_id\', \'',$user_id,'\');</script>';
                 echo '<script type="text/javascript">createCookie(\'zad7_user\', \'',$user,'\');</script>';
@@ -33,6 +37,7 @@
 		$mysqli->query("UPDATE `users` SET `attempts`=`attempts` + 1 WHERE `username` = '$user'") === TRUE;
                 echo "błędne hasło";
             }
+	    }
         } else {
             echo "Blad nazwy użytkownika";
         }
