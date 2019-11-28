@@ -31,7 +31,7 @@
 		if ($handle = opendir("/pliki/$user_name/")) {
 			while (false !== ($entry = readdir($handle))) {
 				if ($entry != "." && $entry != "..") {
-					echo "<a href='download.php?file=".$entry."&user_name=".$user_name."'>".$entry."</a>\n";
+					echo "<a href='/pliki/$user_name/$entry'>".$entry."</a>\n";
 				}
 			}
 			closedir($handle);
