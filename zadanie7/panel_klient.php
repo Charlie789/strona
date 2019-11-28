@@ -26,6 +26,15 @@
 			<input type="submit" value="Dodaj podfolder"/>
 		</form>
 
+		if ($handle = opendir('/pliki/')) {
+			while (false !== ($entry = readdir($handle))) {
+				if ($entry != "." && $entry != "..") {
+					echo "<a href='download.php?file=".$entry."'>".$entry."</a>\n";
+				}
+			}
+			closedir($handle);
+		}
+
 	</div>
 
 </body>
