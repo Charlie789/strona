@@ -25,7 +25,7 @@
 			<input type="text" name="nowy_katalog" maxlength="20" size="20" id="nowy_katalog"/>
 			<input type="submit" value="Dodaj podfolder"/>
 		</form>
-
+		<?php
 		if ($handle = opendir('/pliki/')) {
 			while (false !== ($entry = readdir($handle))) {
 				if ($entry != "." && $entry != "..") {
@@ -34,7 +34,7 @@
 			}
 			closedir($handle);
 		}
-
+		?>
 	</div>
 
 </body>
