@@ -31,13 +31,13 @@
 		if ($handle = opendir("/pliki/$user_name/")) {
 			while (false !== ($entry = readdir($handle))) {
 				if ($entry != "." && $entry != "..") {
-					echo "<a href='/pliki/$user_name/$entry' downl>".$entry."</a>\n";
+					echo "<a href='/pliki/$user_name/$entry' download>".$entry."</a>\n";
 				}
 			}
 			closedir($handle);
 		}
 
-		$iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('/path/to/folder'));
+		$iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator("/pliki/$user_name"));
 		foreach ($iterator as $file) {
 			if ($file->isDir()) continue;
 			$path = $file->getPathname();
