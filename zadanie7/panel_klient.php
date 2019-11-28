@@ -25,7 +25,23 @@
 		<form action="mkdir.php" method="POST"> 
 			<input type="text" name="nowy_katalog" maxlength="20" size="20" id="nowy_katalog"/>
 			<input type="submit" value="Dodaj podfolder"/>
+		</form><br>
+		<form action="odbierz.php" method="POST" ENCTYPE="multipart/form-data"> 
+			<input type="file" name="plik"/>
+			<select id="temat_select" name="temat" onchange="document.getElementById('selected_folder').value=this.options[this.selectedIndex].value">
+				<?php
+					$dirs = glob($somePath . '/*' , GLOB_ONLYDIR);
+					foreach ($dirs as $dir) {
+						print "<option value='$dir'>$dir</option>";
+					}
+				?>
+					
+			</select><br>
+			<input type="hidden" name="selected_folder" id="selected_folder" value="1" />
+			
+			<input type="submit" value="Wyślij plik"/>
 		</form>
+		
 		<?php
 		$user_name = $_COOKIE['zad7_user'];
 		// if ($handle = opendir("/pliki/$user_name/")) {
@@ -36,6 +52,7 @@
 		// 	}
 		// 	closedir($handle);
 		// }
+		
 
 		$iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator("/pliki/$user_name"));
 		foreach ($iterator as $file) {
@@ -44,10 +61,7 @@
 			echo "<a href='$path' download>$path</a>\n";
 		}
 		$somePath="/pliki/$user_name";
-		$dirs = glob($somePath . '/*' , GLOB_ONLYDIR);
-		foreach ($dirs as $dir) {
-			echo "$dir";
-		}
+		
 		?>
 	</div>
 
