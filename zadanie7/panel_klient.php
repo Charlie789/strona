@@ -43,6 +43,11 @@
 			$path = $file->getPathname();
 			echo "<a href='$path' download>$path</a>\n";
 		}
+		$somePath="/pliki/$user_name";
+		$dirs = glob($somePath . '/*' , GLOB_ONLYDIR);
+		foreach ($dirs as $dir) {
+			echo "$dir";
+		}
 		?>
 	</div>
 
