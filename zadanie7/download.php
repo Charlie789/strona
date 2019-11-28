@@ -1,7 +1,7 @@
 <?php
 echo '<script src="/js/cookie.js"></script>';
 $file = basename($_GET['file']);
-$user_name = $_COOKIE['zad7_user'];
+$user_name = basename($_GET['user_name']);
 $file = "/pliki/$user_name/".$file;
 
 if(!file_exists($file)){ // file does not exist
