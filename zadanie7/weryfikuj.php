@@ -14,6 +14,7 @@
             if($row['password']==$pass){
                 echo '<script type="text/javascript">createCookie(\'zad7_user_id\', \'',$user_id,'\');</script>';
                 echo '<script type="text/javascript">createCookie(\'zad7_user\', \'',$user,'\');</script>';
+		$mysqli->query("UPDATE `users` SET `attempts`= 0 WHERE `username`='$user'") === TRUE;
                 $mysqli->query("INSERT INTO `logi`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '1',  NOW())") === TRUE;
                 if($result2 = $mysqli->query("SELECT * FROM `logi` WHERE user_id=$user_id order by history_id DESC LIMIT 1,1")) { 
                     if($row2 = $result2->fetch_assoc()){
@@ -29,6 +30,7 @@
                 
             } else {
                 $mysqli->query("INSERT INTO `logi`(`user_id`, `correct`, `data_czas`) VALUES ('$user_id', '0',  NOW())") === TRUE;
+		$mysqli->query("UPDATE `users` SET `attempts`=`attempts` + 1 WHERE `username` = '$user'") === TRUE;
                 echo "błędne hasło";
             }
         } else {
