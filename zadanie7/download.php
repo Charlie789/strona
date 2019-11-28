@@ -1,6 +1,8 @@
 <?php
+echo '<script src="/js/cookie.js"></script>';
 $file = basename($_GET['file']);
-$file = '/pliki/'.$file;
+$user_name = $_COOKIE['zad7_user'];
+$file = "/pliki/$user_name/".$file;
 
 if(!file_exists($file)){ // file does not exist
     die('file not found');

@@ -13,6 +13,7 @@
 		include($_SERVER['DOCUMENT_ROOT'].'/navigation.php');
 		include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 	?>
+	<script src="/js/cookie.js"></script>
 
 	<div class="content">
 		Panel użytkownika
@@ -26,7 +27,8 @@
 			<input type="submit" value="Dodaj podfolder"/>
 		</form>
 		<?php
-		if ($handle = opendir('/pliki/')) {
+		$user_name = $_COOKIE['zad7_user'];
+		if ($handle = opendir("/pliki/$user_name/")) {
 			while (false !== ($entry = readdir($handle))) {
 				if ($entry != "." && $entry != "..") {
 					echo "<a href='download.php?file=".$entry."'>".$entry."</a>\n";
