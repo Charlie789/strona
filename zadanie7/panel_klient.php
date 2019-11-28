@@ -30,6 +30,8 @@
 			<input type="file" name="plik"/>
 			<select id="temat_select" name="temat" onchange="document.getElementById('selected_folder').value=this.options[this.selectedIndex].value">
 				<?php
+				$user_name = $_COOKIE['zad7_user'];
+					$somePath="/pliki/$user_name";
 					$dirs = glob($somePath . '/*' , GLOB_ONLYDIR);
 					foreach ($dirs as $dir) {
 						print "<option value='$dir'>$dir</option>";
@@ -43,7 +45,7 @@
 		</form>
 		
 		<?php
-		$user_name = $_COOKIE['zad7_user'];
+		
 		// if ($handle = opendir("/pliki/$user_name/")) {
 		// 	while (false !== ($entry = readdir($handle))) {
 		// 		if ($entry != "." && $entry != "..") {
@@ -60,7 +62,7 @@
 			$path = $file->getPathname();
 			echo "<a href='$path' download>$path</a>\n";
 		}
-		$somePath="/pliki/$user_name";
+		
 		
 		?>
 	</div>
