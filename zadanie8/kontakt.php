@@ -44,7 +44,6 @@ $content
 					</script>";
 				echo '<button id="log_out" onclick="logout()">Wyloguj</button>';
 			} else {
-				echo "Kontakt<br>";
 				echo "$content";
 			}
 		?>
