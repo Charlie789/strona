@@ -8,8 +8,17 @@
     include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
     $new_kontakt=$_POST['kontakt_content'];
     echo "$new_kontakt";
-    $mysqli->query("INSERT INTO `kontakt`(`content`) VALUES ('$new_kontakt')") === TRUE;
+    if ($mysqli->query("INSERT INTO `kontakt`(`content`) VALUES ('$new_kontakt')") === TRUE){
+        echo "dodano nowe dane do bazy danych<br><br>";
+    }
 ?>
+<button id="powrot" onclick="powrot_do_kontaktow()">Powrót do strony kontaktowej</button>
+
+<script>
+    function powrot_do_kontaktow() {
+        location.href = "kontakt.php"
+    }
+</script>
 
 </BODY>
 </HTML>

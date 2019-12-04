@@ -31,8 +31,8 @@
 					<script src='https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js'></script>
 					<form action='edit_kontakt.php' method='post'>
 						<textarea name='kontakt_content' id='kontakt_editor'>
-$content;
-						</textarea>
+$content
+</textarea>
 						<p><input type='submit' value='Zapisz zmiany'></p>
 					</form>
 					<script>
