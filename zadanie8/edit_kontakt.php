@@ -6,7 +6,7 @@
 <script src="/js/cookie.js"></script>
 <?php
     include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
-    $new_kontakt=$_POST['kontakt_editor'];
+    $new_kontakt=$_POST['content'];
     echo "$new_kontakt";
 ?>
 
