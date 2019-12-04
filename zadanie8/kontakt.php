@@ -19,6 +19,7 @@
 		<?php 
 			if($_COOKIE['admin']){
 				echo "Kontakt Admin";
+				echo '<button id="logout" onclick=<script type="text/javascript">createCookie(\'admin\', \'','0','\');</script>>Wyloguj</button>';
 			} else {
 				echo "Kontakt";
 			}
