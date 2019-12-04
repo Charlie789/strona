@@ -20,7 +20,21 @@
 		<?php
 			include($_SERVER['DOCUMENT_ROOT'].'/logo.php');
 			if($_COOKIE['admin']){
-				echo "Kontakt Admin";
+				echo 'Kontakt Admin
+					<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+					<form action="edit_kontakt.php" method="post">
+						<textarea name="content" id="kontakt_editor">
+							&lt;p&gt;This is some sample content.&lt;/p&gt;
+						</textarea>
+						<p><input type="submit" value="Zapisz zmiany"></p>
+					</form>
+					<script>
+						ClassicEditor
+							.create( document.querySelector( \'#kontakt_editor\' ) )
+							.catch( error => {
+								console.error( error );
+							} );
+					</script>';
 				echo '<button id="log_out" onclick="logout()">Wyloguj</button>';
 			} else {
 				echo "Kontakt";
