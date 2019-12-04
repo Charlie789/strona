@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <configversion>0</configversion>
+  <preview>false</preview>
+  <content_xml>false</content_xml>
+  <bus_stops>
+    <enabled>true</enabled>
+    <zone_radius>200</zone_radius>
+    <zone_color>#46a2da</zone_color>
+    <zone_border_color>#190a33</zone_border_color>
+    <zone_opacity>0.25</zone_opacity>
+    <announcements>
+      <enabled>true</enabled>
+      <icons>
+        <correct_icon>:/pics/baseline-done-24px.svg</correct_icon>
+        <error_icon>:/pics/baseline-error-24px.svg</error_icon>
+        <warning_icon>:/pics/baseline-warning-24px.svg</warning_icon>
+      </icons>
+    </announcements>
+  </bus_stops>
+</config>

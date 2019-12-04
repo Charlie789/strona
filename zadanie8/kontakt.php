@@ -17,7 +17,7 @@
 
 	<div class="content">
 		<?php 
-			if($_COOKIE['zad7_user']){
+			if($_COOKIE['admin']){
 				echo "Kontakt Admin";
 			} else {
 				echo "Kontakt";
