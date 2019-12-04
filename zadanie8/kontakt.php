@@ -19,7 +19,7 @@
 		<?php 
 			if($_COOKIE['admin']){
 				echo "Kontakt Admin";
-				echo '<button id="logout" onclick=<script type="text/javascript">createCookie(\'admin\', \'','0','\');</script>>Wyloguj</button>';
+				echo '<button id="log_out" onclick="logout()">Wyloguj</button>';
 			} else {
 				echo "Kontakt";
 			}
@@ -27,6 +27,13 @@
 
 		
 	</div>
+
+	<script>
+		function logout() {
+			createCookie('admin', '0');
+			location.href = "main.php";
+		}
+	</script>
 
 </body>
 
