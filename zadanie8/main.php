@@ -17,7 +17,8 @@
 
 	<div class="content">
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/logo.php'); ?>
-		Strona główna
+		Strona główna<br>
+		Witam na mojej stronie, na której uczę się pisać stronę internetową za pomocą PHP, HTML i JS.
 
 		
 	</div>
