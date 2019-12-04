@@ -27,13 +27,13 @@
 			}
 			
 			if($_COOKIE['admin']){
-				echo 'Kontakt Admin
-					<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
-					<form action="edit_kontakt.php" method="post">
-						<textarea name="kontakt_content" id="kontakt_editor">
-							$content;
+				echo "Kontakt Admin
+					<script src='https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js'></script>
+					<form action='edit_kontakt.php' method='post'>
+						<textarea name='kontakt_content' id='kontakt_editor'>
+$content;
 						</textarea>
-						<p><input type="submit" value="Zapisz zmiany"></p>
+						<p><input type='submit' value='Zapisz zmiany'></p>
 					</form>
 					<script>
 						ClassicEditor
@@ -41,7 +41,7 @@
 							.catch( error => {
 								console.error( error );
 							} );
-					</script>';
+					</script>";
 				echo '<button id="log_out" onclick="logout()">Wyloguj</button>';
 			} else {
 				echo "Kontakt<br>";
