@@ -45,6 +45,10 @@ echo
 		<a href="/zadanie7/register_page.php" title="Rejestracja">Rejestracja</a>
 		<a href="/zadanie7/login.php" title="Logowanie">Logowanie</a>
 	</div>
+	<button type="button" class="collapsible">Zadanie 8</button>
+	<div class="collapse_content">
+		<a href="/zadanie8/login.php" title="Logowanie">Logowanie</a>
+	</div>
 </div>
 
 <script src="/js/collapse.js"></script>';
