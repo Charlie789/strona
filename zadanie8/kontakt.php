@@ -14,6 +14,7 @@
 		include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 	?>
 	<script src="/js/cookie.js"></script>
+	<script src="/js/logout.js"></script>
 
 	<div class="content">
 		<?php 
@@ -28,12 +29,12 @@
 		
 	</div>
 
-	<script>
+	<!-- <script>
 		function logout() {
 			createCookie('admin', '0');
-			location.href = "main.php";
+			location.reload = "main.php";
 		}
-	</script>
+	</script> -->
 
 </body>
 
