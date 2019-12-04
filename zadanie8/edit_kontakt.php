@@ -6,8 +6,9 @@
 <script src="/js/cookie.js"></script>
 <?php
     include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
-    $new_kontakt=$_POST['content'];
+    $new_kontakt=$_POST['kontakt_content'];
     echo "$new_kontakt";
+    $mysqli->query("INSERT INTO `kontakt`(`content`) VALUES ('$new_kontakt')") === TRUE;
 ?>
 
 </BODY>
