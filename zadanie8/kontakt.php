@@ -17,6 +17,11 @@
 	<script src="/js/logout.js"></script>
 
 	<div class="content">
+		<div class="logo">
+			<h1>
+				<img src="/img/logo.jpg" alt="logo" />
+			</h1>
+		</div>
 		<?php 
 			if($_COOKIE['admin']){
 				echo "Kontakt Admin";
@@ -29,12 +34,6 @@
 		
 	</div>
 
-	<!-- <script>
-		function logout() {
-			createCookie('admin', '0');
-			location.reload = "main.php";
-		}
-	</script> -->
 
 </body>
 
