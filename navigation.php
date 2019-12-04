@@ -48,6 +48,11 @@ echo
 	<button type="button" class="collapsible">Zadanie 8</button>
 	<div class="collapse_content">
 		<a href="/zadanie8/login.php" title="Logowanie">Logowanie</a>
+		<a href="/zadanie8/main.php" title="Strona główna">Strona główna</a>
+		<a href="/zadanie8/oferta.php" title="Oferta">Oferta</a>
+		<a href="/zadanie8/map.php" title="Jak do nas dojechać">Jak do nas dojechać</a>
+		<a href="/zadanie8/chatbot.php" title="Chatbot">Chatbot</a>
+		<a href="/zadanie8/kontakt.php" title="Kontakt">Kontakt</a>
 	</div>
 </div>
 
