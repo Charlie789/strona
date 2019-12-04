@@ -16,6 +16,7 @@
 	<script src="/js/cookie.js"></script>
 
 	<div class="content">
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/logo.php'); ?>
 		Oferta
 
 		

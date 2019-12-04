@@ -17,10 +17,8 @@
 	<script src="/js/logout.js"></script>
 
 	<div class="content">
-		<div class="logo">
-				<img src="/img/logo.jpg" alt="logo" />
-		</div>
-		<?php 
+		<?php
+			include($_SERVER['DOCUMENT_ROOT'].'/logo.php');
 			if($_COOKIE['admin']){
 				echo "Kontakt Admin";
 				echo '<button id="log_out" onclick="logout()">Wyloguj</button>';

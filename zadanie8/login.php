@@ -12,6 +12,7 @@
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php'); ?>
 
 	<div class="content">
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/logo.php'); ?>
 		Logowanie
 		<form method="post" action="weryfikuj.php">
 			Login:<input type="text" name="user" maxlength="20" size="20"><br>
