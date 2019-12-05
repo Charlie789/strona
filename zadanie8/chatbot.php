@@ -12,69 +12,78 @@
 	<?php
 		include($_SERVER['DOCUMENT_ROOT'].'/navigation.php');
 		include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
+
+		if($result = $mysqli->query("SELECT content FROM oferta order by id DESC LIMIT 1" )) {
+			if($row = $result->fetch_assoc()){
+					$oferta = $row['content'];
+			}
+			$result->close();
+		}
 	?>
 	<script src="/js/cookie.js"></script>
-<div class="content">
-<div class="chat">      <div class="messages"></div>
-      <div id="edge"></div>      <form class="actions">
-        <input type="text" placeholder="press 'Enter' to send...">
-      </form>     </div>
- 
-    <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
-	<script type="text/javascript">
-	let bot = new RiveScript();
+	<div class="content">
+		<div class="chat">      
+			<div class="messages"></div>
+			<div id="edge"></div>      
+			<form class="actions">
+				<input type="text" placeholder="press 'Enter' to send...">
+			</form>     
+		</div>
 
-const brains = [
-   '/brain.rive'
-// './another-category-sample.rive
-];
-bot.loadFile(brains).then(botReady).catch(botNotReady);
+		<script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
+		<script type="text/javascript">
+			let bot = new RiveScript();
 
-const message_container = document.querySelector('.messages');
-const form = document.querySelector('form');
-const input_box = document.querySelector('input');
+			const brains = [
+				'/brain.rive'
+			];
+			bot.loadFile(brains).then(botReady).catch(botNotReady);
 
-function botOferta(){
-   var oferta = <?php echo "oferta"; ?>;
-   botReply(oferta);
-}
+			const message_container = document.querySelector('.messages');
+			const form = document.querySelector('form');
+			const input_box = document.querySelector('input');
 
-form.addEventListener('submit', (e) => {
-   e.preventDefault();
-   selfReply(input_box.value);
-   input_box.value = '';
-});
+			function botOferta(){
+				var oferta = <?php echo json_encode($oferta, JSON_HEX_TAG); ?>;
+				botReply(oferta);
 
-function botReply(message){
-   message_container.innerHTML += `<div class='bot'>${message}</div>`;
-   location.href = '#edge';
-}
+			}
 
-function selfReply(message){
-   message_container.innerHTML += `<div class="self">${message}</div>`;
-   location.href = '#edge';
+			form.addEventListener('submit', (e) => {
+				e.preventDefault();
+				selfReply(input_box.value);
+				input_box.value = '';
+			});
 
-   if (message == "oferta"){
-      botOferta();
-   } else {
-      bot.reply("local-user", message).then(function(reply) {
-         botReply(reply);
-      });
-   }
-   
-   
-}
+			function botReply(message){
+				message_container.innerHTML += `<div class='bot'>${message}</div>`;
+				location.href = '#edge';
+			}
 
-function botReady(){
-   bot.sortReplies();
-   botReply('Hello');
-}
+			function selfReply(message){
+				message_container.innerHTML += `<div class="self">${message}</div>`;
+				location.href = '#edge';
 
-function botNotReady(err){
-   console.log("An error has occurred.", err);
-}</script>
-		
-</div>
+				if (message == "oferta"){
+					botOferta();
+				} else {
+					bot.reply("local-user", message).then(function(reply) {
+						botReply(reply);
+					});
+				}
+				
+				
+			}
+
+			function botReady(){
+				bot.sortReplies();
+				botReply('Hello');
+			}
+
+			function botNotReady(err){
+				console.log("An error has occurred.", err);
+			}
+		</script>
+	</div>
 </body>
-
 </html>
