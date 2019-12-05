@@ -1,38 +1,16 @@
 ! version = 2.0
 
-+ hello
++ (czesc|cześć|hejka|hej|witaj|dzień dobry|dzien dobry|siema)
 - Witaj szanowny kliencie
-
-+ czesc
-- Witaj szanowny kliencie
-
-+ hi
-- hi, what is your name?
-
-+ my name is *
-- nice to meet you <star>
-- nice meeting you <star>
-
-+ thank you
-- you are welcome
-- welcome
-- no problem
-- no worries
 
 + *
-- Sorry did not get what you said
-- I am afraid that i can not understand you
-- I did not get it
-- Sorry can you please elaborate that for me
-
-+ what is your ip address
-- My IP address is: <call>myip</call>
-
-> object myip perl
-    my ($rs, $args) = @_;
-
-    # Fetch the IP.
-    use LWP::Simple;
-    my $ip = get "http://icanhazip.com";
-    return $ip;
-< object
+- Jestem tylko początkującym botem i nie znam odpowiedzi na to pytanie.
+- A Ty <star>
+- Dziwne to pytanie "<star>"
+- Zabawne <star>
+- <star>?????
+- <star>???? a może frytki do tego? 
+- <star>, <star>, <star>
+- Również mi miło "<star>"
+- Masz bardzo nietypowe imię "<star>"
+- nie <star>
