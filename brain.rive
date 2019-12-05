@@ -24,3 +24,15 @@
 - I am afraid that i can not understand you
 - I did not get it
 - Sorry can you please elaborate that for me
+
++ what is your ip address
+- My IP address is: <call>myip</call>
+
+> object myip perl
+    my ($rs, $args) = @_;
+
+    # Fetch the IP.
+    use LWP::Simple;
+    my $ip = get "http://icanhazip.com";
+    return $ip;
+< object
