@@ -8,13 +8,14 @@
 </head>
 
 <body>
-<a href="http://translate.google.com/translate?hl=pl&amp;ie=UTF8&amp;sl=pl&amp;tl=en&amp;u=https://kappel.org.pl/zadanie8/tlumacz.php" target="_self">tłumaczenie</a><br>
 
 	<?php
 		include($_SERVER['DOCUMENT_ROOT'].'/navigation.php');
 	?>
 
 	<div class="content">
+<a href="http://translate.google.com/translate?hl=pl&amp;ie=UTF8&amp;sl=pl&amp;tl=en&amp;u=https://kappel.org.pl/zadanie8/tlumacz.php" target="_self">tłumaczenie</a><br>
+
 			Strony Wikipedii z założenia mogą być edytowane w każdej chwili. <br>
 			Możliwość edycji może być jednak czasowo ograniczona <br>
 			(na przykład tylko dla zalogowanych użytkowników) ze względu na częste wandalizmy lub wojny edycyjne. <br>
