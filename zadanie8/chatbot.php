@@ -14,14 +14,16 @@
 		include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 	?>
 	<script src="/js/cookie.js"></script>
-
-	<div class="content">
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/navigation.php'); ?>
-		Chatbot
-
+<div class="content">
+<div class="chat">      <div class="messages"></div>
+      <div id="edge"></div>      <form class="actions">
+        <input type="text" placeholder="press 'Enter' to send...">
+      </form>     </div>
+ 
+    <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
+    <script src="/js/script.js"></script>
 		
-	</div>
-
+</div>
 </body>
 
 </html>
