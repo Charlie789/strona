@@ -15,12 +15,22 @@
 	?>
 	<script src="/js/cookie.js"></script>
 
-	<div class="content">
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/logo.php'); ?>
-		Strona główna<br>
-		Witam na mojej stronie, na której uczę się pisać stronę internetową za pomocą PHP, HTML i JS.
+	<script src="/js/logout.js"></script>
 
-		
+	<div class="content">
+		<?php 
+			include($_SERVER['DOCUMENT_ROOT'].'/logo.php');
+			if($_COOKIE['admin']){
+					echo "Oferta Admin
+					<form action='odbierz.php' method='POST' ENCTYPE='multipart/form-data'> 
+					<input type='file' name='plik'/>
+					<input type='submit' value='Wyślij plik'/>
+				</form><br>
+					<button id='log_out' onclick='logout()'>Wyloguj</button>";
+			} else {
+					echo "Strona główna";
+			}
+		?>
 	</div>
 
 </body>
