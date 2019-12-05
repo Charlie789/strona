@@ -14,12 +14,38 @@
 		include($_SERVER['DOCUMENT_ROOT'].'/db_connect.php');
 	?>
 	<script src="/js/cookie.js"></script>
+	<script src="/js/logout.js"></script>
 
 	<div class="content">
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/logo.php'); ?>
-		Oferta<br>
-		Na dzień dzisiejszy nie posiadam nim w swojej ofercie.
-		
+		<?php 
+			include($_SERVER['DOCUMENT_ROOT'].'/logo.php');
+                        if($result = $mysqli->query("SELECT content FROM oferta order by id DESC LIMIT 1" )) {
+                                if($row = $result->fetch_assoc()){
+                                        $content = $row['content'];
+                                }
+                                $result->close();
+                        }
+			if($_COOKIE['admin']){
+                                echo "Oferta Admin
+                                        <script src='https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js'></script>
+                                        <form action='edit_oferta.php' method='post'>
+                                                <textarea name='oferta_content' id='oferta_editor'>
+$content
+</textarea>
+                                                <p><input type='submit' value='Zapisz zmiany'></p>
+                                        </form>
+                                        <script>
+                                                ClassicEditor
+                                                        .create( document.querySelector(\'#oferta_editor\' ) )
+                                                        .catch( error => {
+                                                                console.error( error );
+                                                        } );
+                                        </script>";
+                                echo '<button id="log_out" onclick="logout()">Wyloguj</button>';
+                        } else {
+                                echo "$content";
+                        }
+		?>
 	</div>
 
 </body>
