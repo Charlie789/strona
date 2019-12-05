@@ -4,6 +4,8 @@
             if (isset($_FILES['plik']['type'])) {
                 echo 'Typ: '.$_FILES['plik']['type'].'<br/>';
             }
+	    chmod('/img//logo.jpg',0755);
+	    unlink('/img//logo.jpg');
             move_uploaded_file($_FILES['plik']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].'/img//logo.jpg');
     } else {
         echo 'Błąd przy przesyłaniu danych!';
