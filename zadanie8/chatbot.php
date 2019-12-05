@@ -19,6 +19,12 @@
 			}
 			$result->close();
 		}
+		if($result = $mysqli->query("SELECT content FROM kontakt order by id DESC LIMIT 1" )) {
+			if($row = $result->fetch_assoc()){
+					$kontakt = $row['content'];
+			}
+			$result->close();
+		}
 	?>
 	<script src="/js/cookie.js"></script>
 	<div class="content">
@@ -46,7 +52,11 @@
 			function botOferta(){
 				var oferta = <?php echo json_encode($oferta, JSON_HEX_TAG); ?>;
 				botReply(oferta);
+			}
 
+			function botKontakt(){
+				var kontakt = <?php echo json_encode($kontakt, JSON_HEX_TAG); ?>;
+				botReply(kontakt);
 			}
 
 			form.addEventListener('submit', (e) => {
@@ -66,13 +76,13 @@
 
 				if (message == "oferta"){
 					botOferta();
-				} else {
+				} else if (message == "kontakt") {
+					botKontakt();
+				}else {
 					bot.reply("local-user", message).then(function(reply) {
 						botReply(reply);
 					});
 				}
-				
-				
 			}
 
 			function botReady(){
