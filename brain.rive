@@ -1,7 +1,10 @@
 ! version = 2.0
 
 + hello
-- hello, what is your name?
++ witaj
++ czesc
++ cześć
+- Witaj szanowny kliencie!
 
 + hi
 - hi, what is your name?
