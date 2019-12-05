@@ -14,7 +14,10 @@
 	?>
 
 	<div class="content">
-<a href="http://translate.google.com/translate?hl=pl&amp;ie=UTF8&amp;sl=pl&amp;tl=en&amp;u=https://kappel.org.pl/zadanie8/tlumacz.php" target="_self">tłumaczenie</a><br>
+			<a href="http://translate.google.com/translate?hl=pl&amp;ie=UTF8&amp;sl=pl&amp;tl=en&amp;u=https://kappel.org.pl/zadanie8/tlumacz.php" target="_self">angielski</a><br>
+			<a href="http://translate.google.com/translate?hl=pl&amp;ie=UTF8&amp;sl=pl&amp;tl=ar&amp;u=https://kappel.org.pl/zadanie8/tlumacz.php" target="_self">arabski</a><br>
+			<a href="http://translate.google.com/translate?hl=pl&amp;ie=UTF8&amp;sl=pl&amp;tl=ru&amp;u=https://kappel.org.pl/zadanie8/tlumacz.php" target="_self">rosyjski</a><br>
+			<a href="http://translate.google.com/translate?hl=pl&amp;ie=UTF8&amp;sl=pl&amp;tl=be&amp;u=https://kappel.org.pl/zadanie8/tlumacz.php" target="_self">białoruski</a><br>
 
 			Strony Wikipedii z założenia mogą być edytowane w każdej chwili. <br>
 			Możliwość edycji może być jednak czasowo ograniczona <br>
