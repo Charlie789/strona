@@ -53,6 +53,7 @@ echo
 		<a href="/zadanie8/map.php" title="Jak do nas dojechać">Jak do nas dojechać</a>
 		<a href="/zadanie8/chatbot.php" title="Chatbot">Chatbot</a>
 		<a href="/zadanie8/kontakt.php" title="Kontakt">Kontakt</a>
+		<a href="/zadanie8/tlumacz.php" title="Tłumacz">Tłumacz</a>
 	</div>
 </div>
 
