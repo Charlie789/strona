@@ -59,6 +59,10 @@
 				botReply(kontakt);
 			}
 
+			function botPomoc(){
+				botReply("kontakt, telefon, adres, oferta");
+			}
+
 			form.addEventListener('submit', (e) => {
 				e.preventDefault();
 				selfReply(input_box.value);
@@ -76,9 +80,11 @@
 
 				if (message == "oferta"){
 					botOferta();
-				} else if (message == "kontakt") {
+				} else if (message == "kontakt" || message == "adres" || message == "telefon") {
 					botKontakt();
-				}else {
+				} else if (message == "h" || message == "?") {
+					botPomoc();
+				} else {
 					bot.reply("local-user", message).then(function(reply) {
 						botReply(reply);
 					});

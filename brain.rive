@@ -1,7 +1,7 @@
 ! version = 2.0
 
-+ (czesc|cześć|hejka|hej|witaj|dzień dobry|dzien dobry|siema)
-- Witaj szanowny kliencie
++ (czesc|witaj|siema|dzien dobry)
+- Witaj szanowny kliencie!
 
 + *
 - Jestem tylko początkującym botem i nie znam odpowiedzi na to pytanie.
@@ -9,7 +9,7 @@
 - Dziwne to pytanie "<star>"
 - Zabawne <star>
 - <star>?????
-- <star>???? a może frytki do tego? 
+- <star>???? a może frytki do tego?
 - <star>, <star>, <star>
 - Również mi miło "<star>"
 - Masz bardzo nietypowe imię "<star>"
