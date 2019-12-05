@@ -10,4 +10,12 @@
     } else {
         echo 'Błąd przy przesyłaniu danych!';
     }
+
+    echo "<button id='powrot' onclick='powrot_do_main()'>Powrót do strony głównej</button>
+
+    <script>
+        function powrot_do_main() {
+            location.href = 'main.php'
+        }
+    </script>";
 ?>

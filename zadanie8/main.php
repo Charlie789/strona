@@ -21,10 +21,10 @@
 		<?php 
 			include($_SERVER['DOCUMENT_ROOT'].'/logo.php');
 			if($_COOKIE['admin']){
-					echo "Oferta Admin
+					echo "Zmień logo
 					<form action='odbierz.php' method='POST' ENCTYPE='multipart/form-data'> 
 					<input type='file' name='plik'/>
-					<input type='submit' value='Wyślij plik'/>
+					<input type='submit' value='Wyślij logo'/>
 				</form><br>
 					<button id='log_out' onclick='logout()'>Wyloguj</button>";
 			} else {
