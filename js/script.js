@@ -10,6 +10,10 @@ const message_container = document.querySelector('.messages');
 const form = document.querySelector('form');
 const input_box = document.querySelector('input');
 
+function botTest(){
+   botReply('test');
+}
+
 form.addEventListener('submit', (e) => {
    e.preventDefault();
    selfReply(input_box.value);
@@ -24,10 +28,16 @@ function botReply(message){
 function selfReply(message){
    message_container.innerHTML += `<div class="self">${message}</div>`;
    location.href = '#edge';
+
+   if (message == "test"){
+      botTest();
+   } else {
+      bot.reply("local-user", message).then(function(reply) {
+         botReply(reply);
+      });
+   }
    
-   bot.reply("local-user", message).then(function(reply) {
-      botReply(reply);
-   });
+   
 }
 
 function botReady(){
