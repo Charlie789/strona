@@ -12,8 +12,8 @@
 	<div class="content">
 		Android Test
 		<?php include 'db_connect.php';
-			$username = $_GET['username'];
-			$password = $_GET['password'];
+			$username = $_POST['username'];
+			$password = $_POST['password'];
 			$result = mysqli_query($con,"SELECT Role FROM Android where Username='$username' and Password='$password'");
 			$row = mysqli_fetch_array($result);
 			$data = $row[0];
