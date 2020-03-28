@@ -14,9 +14,9 @@
 		<?php include 'db_connect.php';
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			$result = mysqli_query($con,"SELECT Role FROM Android where Username='$username' and Password='$password'");
-			$row = mysqli_fetch_array($result);
-			$data = $row[0];
+			$result = $mysqli->query("SELECT Role FROM Android where Username='$username' and Password='$password'");
+			$row = $result->fetch_assoc();
+			$data = $row['Role'];
 			if($data){
 				echo $data;
 			}
